@@ -1,17 +1,6 @@
 # SWS405 Digital Forensics – Assignment 2
 ## MemLabs Memory Forensics Challenge (Labs 1 – 5)
 
-| | |
-|---|---|
-| **Student ID** | 02230297 |
-| **Name** | [FILL IN: your name] |
-| **Module** | SWS405 – Digital Forensics |
-| **Tutor** | Pema Thinley |
-| **Date of analysis** | 10 – 11 October 2026 |
-| **Environment** | Kali Linux VM, Volatility Framework 2.6 (standalone Linux binary), unrar 7.30, 7-Zip 26.03, KeePassXC, sqlite3, steghide, GIMP |
-
----
-
 ## Table of Contents
 1. [Setup and Method](#setup-and-method)
 2. [Lab 1 – Beginner's Luck](#lab-1--beginners-luck)
