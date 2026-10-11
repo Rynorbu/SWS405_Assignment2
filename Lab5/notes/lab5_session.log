@@ -1,0 +1,415 @@
+Script started on 2026-10-11 00:26:48-04:00 [TERM="xterm-256color" TTY="/dev/pts/2" COLUMNS="136" LINES="28"]
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5[0m[27m[24m[J[32m┌──([1m[32m[34mryo㉿kali[0m[34m[32m)-[[1m[32m[39m~/memlabs/Lab5[0m[32m]
+└─[1m[32m[34m$[0m[34m[39m [K[?1h=[?2004hPROMPT='[%n@02230297 %1~]$ '
+[K[A[11C[33m'[1m[34m[[0m[39m[33m%[33mn[33m@[33m0[33m2[33m2[33m3[33m0[33m2[33m9[33m7[33m [33m%[33m1[33m~[1m[34m][0m[39m[33m$[33m [33m'[39m[1B[K[K[A[32C[?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hIMG=MemoryDump_Lab5.raw
+[K[K[K[A[44C[?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hunset VOLATILITY_KDBG
+date; whoami[K[A[9C[36mu[36mn[36ms[36me[36mt[39m[1B[36md[36ma[36mt[36me[39m[1m[34m;[0m[39m [36mw[36mh[36mo[36ma[36mm[36mi[39m[?1l>[?2004l
+Sun Oct 11 12:27:05 AM EDT 2026
+ryo
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hmd5sum $IMG
+sha256sum $IMG[K
+[K
+[K[3A[21C[36mm[36md[36m5[36ms[36mu[36mm[39m[1B[36ms[36mh[36ma[36m2[36m5[36m6[36ms[36mu[36mm[39m[2B[K[K[A[K[A[14C[?1l>[?2004l[1Bmd5sum: MemoryDump_Lab5.raw: No such file or directory
+sha256sum: MemoryDump_Lab5.raw: No such file or directory
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms -lh[39m[36ml[36ms[39m[39m [39m [39m [39m [?1l>[?2004l
+[0m[01;34mdump[0m  [01;31mMemLabs-Lab5.7z[0m  [01;34mnotes[0m  [01;34mscreenshots[0m
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md ~/memlabs/Lab4[39m
+[38;5;244mscript -a ~/memlabs/Lab4/notes/lab4_session.log[39m[K
+[38;5;244mPROMPT='[%n@02230297 %1~]$ '[39m[K
+[38;5;244mIMG=MemoryDump_Lab4.raw[39m[K
+[38;5;244mdate; whoami[39m[K[4A[10C[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39md[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[1B[K[1B[K[1B[K[4A[25C[1md[0m[1md[1mu[0m[1mu[1mmp/[0m[1mp[0m[0m [?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[36ml[39m[39m [36ml[39m[38;5;244ms[39m[39m [39m c[4mc[24m[4mc[24m[38;5;244md dump[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39m.[39m [39m [39m [1m.[0m[1m.[1m.[0m[?1l>[?2004l
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hcd ..[36mc[36md[39m [1m.[1m.[0m[1md[1mu[0mmp[1mu[1mm[1mp[0m[36ml[36ms[39m [0m [0m [0m [0m [36mm[36md[39m5sum $IMG
+sha256sum $IMG[K[A[7C[36mm[36md[36m5[36ms[36mu[36mm[39m[1B[36ms[36mh[36ma[36m2[36m5[36m6[36ms[36mu[36mm[39m[5C[A[7C[36mu[36mn[36ms[36me[36mt[36m [39mVOLAT[1m[34mI[0m[39m[36mLITY_KDBG[39m[1B[39md[39ma[39mt[39me[39m;[39m [39mw[39mh[39moami  [A[13C[36mt[39m[39m [5C[0m[39mI[39mL[39mI[39mT[39mY[39m_[39mK[39mD[39mB[39mG[1B[36md[36ma[36mt[36me[39m[1m[34m;[0m[39m [36mw[36mh[36mo[36ma[36mm[36mi[39m[A[9C[36mI[36mM[36mG[36m=[36mM[39memoryDump_Lab5.r[1m[34ma[0m[39m[36mw[39m[1B[K[A[44C[23D[39mI[39mM[39mG[39m=[39mM[16C[0m[39ma[39mw7z x MemLabs-Lab5.7z[1B[K[A[47C[4mx[24m [1mM[1me[1mm[1mL[1ma[1mb[1ms[1m-[1mL[1ma[1mb[1m5[1m.[1m7[1mz[0m[1B[K[?1l>[?2004l
+x: command not found
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004h7z x MemLabs-Lab5.7z
+[K[A[21C[36m7[36mz[39m[3C[1mM[1me[1mm[1mL[1ma[1mb[1ms[1m-[1mL[1ma[1mb[1m5[1m.[1m7[1mz[0m[1B[K[K[A[41C[?1l>[?2004l[1B
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:8 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 0 bytes
+
+Extracting archive: MemLabs-Lab5.7z
+ERROR: MemLabs-Lab5.7z
+Cannot open the file as archive
+
+  0%    
+Can't open as archive: 1
+Files: 0
+Size:       0
+Compressed: 0
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hmv ~/Downloads/MemLabs-Lab5.7z ~/memlabs/Lab5/[46D[36mm[36mv[39m [1m~[1m/[1mD[1mo[1mw[1mn[1ml[1mo[1ma[1md[1ms[1m/[1mM[1me[1mm[1mL[1ma[1mb[1ms[1m-[1mL[1ma[1mb[1m5[1m.[1m7[1mz[0m [1m~[1m/[1mm[1me[1mm[1ml[1ma[1mb[1ms[1m/[1mL[1ma[1mb[1m5[1m/[0m[?1l>[?2004l
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hcd ~/memlabs/Lab5
+7z x MemLabs-Lab5.7z[K
+ls -lh[K[A[A[15C[36mc[36md[39m [1m~[1m/[1mm[1me[1mm[1ml[1ma[1mb[1ms[1m/[1mL[1ma[1mb[1m5[0m[1B[36m7[36mz[39m[3C[1mM[1me[1mm[1mL[1ma[1mb[1ms[1m-[1mL[1ma[1mb[1m5[1m.[1m7[1mz[0m[1B[36ml[36ms[39m [32m-[32ml[32mh[39m[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:8 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 185946989 bytes (178 MiB)
+
+Extracting archive: MemLabs-Lab5.7z
+--
+Path = MemLabs-Lab5.7z
+Type = 7z
+Physical Size = 185946989
+Headers Size = 146
+Method = LZMA2:24
+Solid = -
+Blocks = 1
+
+  0%     17%     35%     45%     49% - MemoryDump_Lab5.raw                           50% - MemoryDump_Lab5.raw                           53% - MemoryDump_Lab5.raw                           58% - MemoryDump_Lab5.raw                           67% - MemoryDump_Lab5.raw                           72% - MemoryDump_Lab5.raw                           80% - MemoryDump_Lab5.raw                           81% - MemoryDump_Lab5.raw                           84% - MemoryDump_Lab5.raw                           85% - MemoryDump_Lab5.raw                           87% - MemoryDump_Lab5.raw                           89% - MemoryDump_Lab5.raw                           93% - MemoryDump_Lab5.raw                           99% - MemoryDump_Lab5.raw                          100% - MemoryDump_Lab5.raw                          100% 1      Everything is Ok
+
+Size:       1073676288
+Compressed: 185946989
+total 1.2G
+drwxrwxr-x 2 ryo ryo 4.0K Oct 11 00:25 [0m[01;34mdump[0m
+-rw-rw-r-- 1 ryo ryo 178M Oct 11 00:30 [01;31mMemLabs-Lab5.7z[0m
+-rwxrwxr-x 1 ryo ryo 1.0G Dec 19  2019 [01;32mMemoryDump_Lab5.raw[0m
+drwxrwxr-x 2 ryo ryo 4.0K Oct 11 00:26 [01;34mnotes[0m
+drwxrwxr-x 2 ryo ryo 4.0K Oct 11 00:25 [01;34mscreenshots[0m
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab5]$ IMG=MemoryDump_Lab5.raw
+[K[A[25C[1mM[1me[1mm[1mo[1mr[1my[1mD[1mu[1mm[1mp[1m_[1mL[1ma[1mb[1m5[1m.[1mr[1ma[1mw[0m[1B[K[K[A[44C[38;5;244m7z x MemLabs-Lab5.7z[1B[39m[K[A[44C[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[A[44C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hunset VOLATILITY_KDBG
+[K[A[21C[36mu[36mn[36ms[36me[36mt[39m[1B[K[38;5;244md[38;5;244ma[38;5;244mt[38;5;244me[38;5;244m;[38;5;244m [38;5;244mw[38;5;244mh[38;5;244mo[38;5;244ma[38;5;244mm[38;5;244mi[39m[K[A[42C[1B[38;5;244mdate; whoami[39m[K[A[30C[1B[K[A[42C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hdate; whoami
+[K
+[K[A[A[21C[36md[36ma[36mt[36me[39m[1m[34m;[0m[39m [36mw[36mh[36mo[36ma[36mm[36mi[39m[2B[K[K[A[K[A[33C[?1l>[?2004l[1BSun Oct 11 12:32:34 AM EDT 2026
+ryo
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hmd5sum $IMG
+sha256sum $IMG[K[A[7C[36mm[36md[36m5[36ms[36mu[36mm[39m[1B[36ms[36mh[36ma[36m2[36m5[36m6[36ms[36mu[36mm[39m[5C[?1l>[?2004l
+9dd6cb1134c9b018020bad44f27394db  MemoryDump_Lab5.raw
+08725b77ed2a447b128e12c031c17db4524f36920db791e27452b5d9165ff83a  MemoryDump_Lab5.raw
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG imageinfo
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[2B[K[K[A[1B[K[A[K[1B[K[A[A[42C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : Win7SP1x64, Win7SP0x64, Win2008R2SP0x64, Win2008R2SP1x64_23418, Win2008R2SP1x64, Win7SP1x64_23418
+                     AS Layer1 : WindowsAMD64PagedMemory (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/ryo/memlabs/Lab5/MemoryDump_Lab5.raw)
+                      PAE type : No PAE
+                           DTB : 0x187000L
+                          KDBG : 0xf800028460a0L
+          Number of Processors : 1
+     Image Type (Service Pack) : 1
+                KPCR for CPU 0 : 0xfffff80002847d00L
+             KUSER_SHARED_DATA : 0xfffff78000000000L
+           Image date and time : 2019-12-20 03:47:57 UTC+0000
+     Image local date and time : 2019-12-20 09:17:57 +0530
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hP=Win7SP1x64
+[K
+[K[K[K[A[K[A[33C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG --profile=$P pslist | tee notes/pslist.txt
+vol -f $IMG --profile=$P pstree | tee notes/pstree.txt[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[1B[K[K[A[54C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+------------------ -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+0xfffffa8000ca0040 System                    4      0     80      562 ------      0 2019-12-20 03:41:40 UTC+0000                                 
+0xfffffa80014b9040 smss.exe                248      4      3       37 ------      0 2019-12-20 03:41:40 UTC+0000                                 
+0xfffffa8000d96b30 csrss.exe               320    312     10      471      0      0 2019-12-20 03:41:45 UTC+0000                                 
+0xfffffa8001c5d060 csrss.exe               368    360      8      173      1      0 2019-12-20 03:41:47 UTC+0000                                 
+0xfffffa8001c6b060 psxss.exe               376    248     18      786      0      0 2019-12-20 03:41:47 UTC+0000                                 
+0xfffffa8001c775a0 winlogon.exe            416    360      3      108      1      0 2019-12-20 03:41:48 UTC+0000                                 
+0xfffffa8001c7c060 wininit.exe             428    312      3       75      0      0 2019-12-20 03:41:48 UTC+0000                                 
+0xfffffa8001c7bb30 services.exe            484    428      8      213      0      0 2019-12-20 03:41:50 UTC+0000                                 
+0xfffffa8001cb9880 lsass.exe               492    428      9      761      0      0 2019-12-20 03:41:50 UTC+0000                                 
+0xfffffa8001cbc4a0 lsm.exe                 500    428     10      171      0      0 2019-12-20 03:41:50 UTC+0000                                 
+0xfffffa8001ce6b30 svchost.exe             588    484     10      357      0      0 2019-12-20 03:41:54 UTC+0000                                 
+0xfffffa8001d4cb30 VBoxService.ex          656    484     13      135      0      0 2019-12-20 03:41:55 UTC+0000                                 
+0xfffffa8001d63b30 svchost.exe             724    484      8      282      0      0 2019-12-20 03:41:56 UTC+0000                                 
+0xfffffa8001da1240 svchost.exe             820    484     23      590      0      0 2019-12-20 03:41:57 UTC+0000                                 
+0xfffffa8001dba060 svchost.exe             856    484     28      535      0      0 2019-12-20 03:41:58 UTC+0000                                 
+0xfffffa8001dc2b30 svchost.exe             880    484     33      983      0      0 2019-12-20 03:41:58 UTC+0000                                 
+0xfffffa8000cf5b30 audiodg.exe             968    820      6      131      0      0 2019-12-20 03:42:00 UTC+0000                                 
+0xfffffa8001e1cb30 svchost.exe             340    484     22      504      0      0 2019-12-20 03:42:03 UTC+0000                                 
+0xfffffa8001e6c700 svchost.exe            1044    484     16      381      0      0 2019-12-20 03:42:04 UTC+0000                                 
+0xfffffa8001ee1060 spoolsv.exe            1232    484     13      283      0      0 2019-12-20 03:42:09 UTC+0000                                 
+0xfffffa8001efbb30 svchost.exe            1272    484     19      307      0      0 2019-12-20 03:42:10 UTC+0000                                 
+0xfffffa8001f775f0 svchost.exe            1372    484     22      303      0      0 2019-12-20 03:42:12 UTC+0000                                 
+0xfffffa8001f93b30 TCPSVCS.EXE            1416    484      4       97      0      0 2019-12-20 03:42:13 UTC+0000                                 
+0xfffffa8001dbf350 taskhost.exe           2012    484      8      189      1      0 2019-12-20 03:43:19 UTC+0000                                 
+0xfffffa8002117b30 taskeng.exe            1140    880      4       79      0      0 2019-12-20 03:43:19 UTC+0000                                 
+0xfffffa8002170b30 dwm.exe                1172    856      5       71      1      0 2019-12-20 03:43:19 UTC+0000                                 
+0xfffffa8002198b30 explorer.exe           1396   1180     30      758      1      0 2019-12-20 03:43:19 UTC+0000                                 
+0xfffffa8002206890 VBoxTray.exe            528   1396     12      139      1      0 2019-12-20 03:43:25 UTC+0000                                 
+0xfffffa800222d7a0 SearchIndexer.         1800    484     13      710      0      0 2019-12-20 03:43:36 UTC+0000                                 
+0xfffffa80022a9b30 wmpnetwk.exe           1928    484     16      510      0      0 2019-12-20 03:43:40 UTC+0000                                 
+0xfffffa8001ec57c0 svchost.exe            2296    484      9      355      0      0 2019-12-20 03:43:45 UTC+0000                                 
+0xfffffa8001c3e910 WmiPrvSE.exe           2572    588      6      109      0      0 2019-12-20 03:43:56 UTC+0000                                 
+0xfffffa800209b760 sppsvc.exe             2940    484      4      141      0      0 2019-12-20 03:44:24 UTC+0000                                 
+0xfffffa80014a6390 svchost.exe            1128    484     13      315      0      0 2019-12-20 03:44:31 UTC+0000                                 
+0xfffffa8000f27b30 dllhost.exe             668    588      8      149      1      0 2019-12-20 03:46:37 UTC+0000                                 
+0xfffffa8000f63060 SearchFilterHo         2608   1800      5       78      0      0 2019-12-20 03:46:41 UTC+0000                                 
+0xfffffa8000ea7b30 SearchProtocol          628   1800      6      270      0      0 2019-12-20 03:46:41 UTC+0000                                 
+0xfffffa8000f7a630 csrss.exe              1988    364      7      219      2      0 2019-12-20 03:46:42 UTC+0000                                 
+0xfffffa8000f82060 winlogon.exe           2120    364      4      113      2      0 2019-12-20 03:46:42 UTC+0000                                 
+0xfffffa8000fcd8e0 taskhost.exe           1968    484      9      150      2      0 2019-12-20 03:46:49 UTC+0000                                 
+0xfffffa8000fb34d0 dwm.exe                2360    856      5       71      2      0 2019-12-20 03:46:49 UTC+0000                                 
+0xfffffa80010213d0 explorer.exe           1580   2256     40     1007      2      0 2019-12-20 03:46:49 UTC+0000                                 
+0xfffffa800105ab30 VBoxTray.exe           2144   1580     13      138      2      0 2019-12-20 03:46:50 UTC+0000                                 
+0xfffffa8000f97a20 WinRAR.exe             2924   1580      6      210      2      0 2019-12-20 03:47:13 UTC+0000                                 
+0xfffffa80010b8060 notepad.exe            2744   1580      1       57      2      0 2019-12-20 03:47:21 UTC+0000                                 
+0xfffffa8000eeb060 DumpIt.exe             2208   1580      2       45      2      1 2019-12-20 03:47:39 UTC+0000                                 
+0xfffffa8000eab790 conhost.exe            2612   1988      2       51      2      0 2019-12-20 03:47:40 UTC+0000                                 
+0xfffffa800108cb30 NOTEPAD.EXE            2724   1580      1       39      2      1 2019-12-20 03:47:53 UTC+0000                                 
+0xfffffa800109f060 svchost.exe            2632    484      7       82      0      0 2019-12-20 03:47:54 UTC+0000                                 
+0xfffffa8000ee8060 WerFault.exe           2716   2632      8      161      2      1 2019-12-20 03:47:54 UTC+0000                                 
+0xfffffa800221ab30 NOTEPAD.EXE            1388   1580      1       39      2      1 2019-12-20 03:48:00 UTC+0000                                 
+0xfffffa8000efbb30 WerFault.exe            780   2632      7      160      2      1 2019-12-20 03:48:01 UTC+0000                                 
+0xfffffa8000f02b30 NOTEPAD.EXE            2056   1580      1      226 ------      1 2019-12-20 03:48:15 UTC+0000                                 
+0xfffffa8000f05b30 WerFault.exe           2168   2632      7  1572864 ------      1 2019-12-20 03:48:15 UTC+0000                                 
+Volatility Foundation Volatility Framework 2.6
+Name                                                  Pid   PPid   Thds   Hnds Time
+-------------------------------------------------- ------ ------ ------ ------ ----
+ 0xfffffa8001c7c060:wininit.exe                       428    312      3     75 2019-12-20 03:41:48 UTC+0000
+. 0xfffffa8001c7bb30:services.exe                     484    428      8    213 2019-12-20 03:41:50 UTC+0000
+.. 0xfffffa8001f93b30:TCPSVCS.EXE                    1416    484      4     97 2019-12-20 03:42:13 UTC+0000
+.. 0xfffffa8001d4cb30:VBoxService.ex                  656    484     13    135 2019-12-20 03:41:55 UTC+0000
+.. 0xfffffa8001e6c700:svchost.exe                    1044    484     16    381 2019-12-20 03:42:04 UTC+0000
+.. 0xfffffa800109f060:svchost.exe                    2632    484      7     82 2019-12-20 03:47:54 UTC+0000
+... 0xfffffa8000efbb30:WerFault.exe                   780   2632      7    160 2019-12-20 03:48:01 UTC+0000
+... 0xfffffa8000ee8060:WerFault.exe                  2716   2632      8    161 2019-12-20 03:47:54 UTC+0000
+... 0xfffffa8000f05b30:WerFault.exe                  2168   2632      7 15...4 2019-12-20 03:48:15 UTC+0000
+.. 0xfffffa8001dc2b30:svchost.exe                     880    484     33    983 2019-12-20 03:41:58 UTC+0000
+... 0xfffffa8002117b30:taskeng.exe                   1140    880      4     79 2019-12-20 03:43:19 UTC+0000
+.. 0xfffffa8001dbf350:taskhost.exe                   2012    484      8    189 2019-12-20 03:43:19 UTC+0000
+.. 0xfffffa800222d7a0:SearchIndexer.                 1800    484     13    710 2019-12-20 03:43:36 UTC+0000
+... 0xfffffa8000f63060:SearchFilterHo                2608   1800      5     78 2019-12-20 03:46:41 UTC+0000
+... 0xfffffa8000ea7b30:SearchProtocol                 628   1800      6    270 2019-12-20 03:46:41 UTC+0000
+.. 0xfffffa80022a9b30:wmpnetwk.exe                   1928    484     16    510 2019-12-20 03:43:40 UTC+0000
+.. 0xfffffa8001da1240:svchost.exe                     820    484     23    590 2019-12-20 03:41:57 UTC+0000
+... 0xfffffa8000cf5b30:audiodg.exe                    968    820      6    131 2019-12-20 03:42:00 UTC+0000
+.. 0xfffffa8001efbb30:svchost.exe                    1272    484     19    307 2019-12-20 03:42:10 UTC+0000
+.. 0xfffffa8001ce6b30:svchost.exe                     588    484     10    357 2019-12-20 03:41:54 UTC+0000
+... 0xfffffa8001c3e910:WmiPrvSE.exe                  2572    588      6    109 2019-12-20 03:43:56 UTC+0000
+... 0xfffffa8000f27b30:dllhost.exe                    668    588      8    149 2019-12-20 03:46:37 UTC+0000
+.. 0xfffffa8001ee1060:spoolsv.exe                    1232    484     13    283 2019-12-20 03:42:09 UTC+0000
+.. 0xfffffa8001d63b30:svchost.exe                     724    484      8    282 2019-12-20 03:41:56 UTC+0000
+.. 0xfffffa8001dba060:svchost.exe                     856    484     28    535 2019-12-20 03:41:58 UTC+0000
+... 0xfffffa8002170b30:dwm.exe                       1172    856      5     71 2019-12-20 03:43:19 UTC+0000
+... 0xfffffa8000fb34d0:dwm.exe                       2360    856      5     71 2019-12-20 03:46:49 UTC+0000
+.. 0xfffffa8001f775f0:svchost.exe                    1372    484     22    303 2019-12-20 03:42:12 UTC+0000
+.. 0xfffffa8001ec57c0:svchost.exe                    2296    484      9    355 2019-12-20 03:43:45 UTC+0000
+.. 0xfffffa8000fcd8e0:taskhost.exe                   1968    484      9    150 2019-12-20 03:46:49 UTC+0000
+.. 0xfffffa80014a6390:svchost.exe                    1128    484     13    315 2019-12-20 03:44:31 UTC+0000
+.. 0xfffffa8001e1cb30:svchost.exe                     340    484     22    504 2019-12-20 03:42:03 UTC+0000
+.. 0xfffffa800209b760:sppsvc.exe                     2940    484      4    141 2019-12-20 03:44:24 UTC+0000
+. 0xfffffa8001cb9880:lsass.exe                        492    428      9    761 2019-12-20 03:41:50 UTC+0000
+. 0xfffffa8001cbc4a0:lsm.exe                          500    428     10    171 2019-12-20 03:41:50 UTC+0000
+ 0xfffffa8000d96b30:csrss.exe                         320    312     10    471 2019-12-20 03:41:45 UTC+0000
+ 0xfffffa8000ca0040:System                              4      0     80    562 2019-12-20 03:41:40 UTC+0000
+. 0xfffffa80014b9040:smss.exe                         248      4      3     37 2019-12-20 03:41:40 UTC+0000
+.. 0xfffffa8001c6b060:psxss.exe                       376    248     18    786 2019-12-20 03:41:47 UTC+0000
+ 0xfffffa80010213d0:explorer.exe                     1580   2256     40   1007 2019-12-20 03:46:49 UTC+0000
+. 0xfffffa800108cb30:NOTEPAD.EXE                     2724   1580      1     39 2019-12-20 03:47:53 UTC+0000
+. 0xfffffa8000f02b30:NOTEPAD.EXE                     2056   1580      1    226 2019-12-20 03:48:15 UTC+0000
+. 0xfffffa8000eeb060:DumpIt.exe                      2208   1580      2     45 2019-12-20 03:47:39 UTC+0000
+. 0xfffffa800221ab30:NOTEPAD.EXE                     1388   1580      1     39 2019-12-20 03:48:00 UTC+0000
+. 0xfffffa800105ab30:VBoxTray.exe                    2144   1580     13    138 2019-12-20 03:46:50 UTC+0000
+. 0xfffffa80010b8060:notepad.exe                     2744   1580      1     57 2019-12-20 03:47:21 UTC+0000
+. 0xfffffa8000f97a20:WinRAR.exe                      2924   1580      6    210 2019-12-20 03:47:13 UTC+0000
+ 0xfffffa8001c775a0:winlogon.exe                      416    360      3    108 2019-12-20 03:41:48 UTC+0000
+ 0xfffffa8001c5d060:csrss.exe                         368    360      8    173 2019-12-20 03:41:47 UTC+0000
+ 0xfffffa8000f82060:winlogon.exe                     2120    364      4    113 2019-12-20 03:46:42 UTC+0000
+ 0xfffffa8000f7a630:csrss.exe                        1988    364      7    219 2019-12-20 03:46:42 UTC+0000
+. 0xfffffa8000eab790:conhost.exe                     2612   1988      2     51 2019-12-20 03:47:40 UTC+0000
+ 0xfffffa8002198b30:explorer.exe                     1396   1180     30    758 2019-12-20 03:43:19 UTC+0000
+. 0xfffffa8002206890:VBoxTray.exe                     528   1396     12    139 2019-12-20 03:43:25 UTC+0000
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hgrep -iE "winrar|iexplore|chrome|firefox|notepad|dumpit" notes/pslist.txt
+[K[A[21C[36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33mw[33mi[33mn[33mr[33ma[33mr[33m|[33mi[33me[33mx[33mp[33ml[33mo[33mr[33me[33m|[33mc[33mh[33mr[33mo[33mm[33me[33m|[33mf[33mi[33mr[33me[33mf[33mo[33mx[33m|[33mn[33mo[33mt[33me[33mp[33ma[33md[33m|[33md[33mu[33mm[33mp[33mi[33mt[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mp[1ms[1ml[1mi[1ms[1mt[1m.[1mt[1mx[1mt[0m[1B[K[K[A[94C[?1l>[?2004l[1B0xfffffa8000f97a20 [01;31m[KWinRAR[m[K.exe             2924   1580      6      210      2      0 2019-12-20 03:47:13 UTC+0000                                 
+0xfffffa80010b8060 [01;31m[Knotepad[m[K.exe            2744   1580      1       57      2      0 2019-12-20 03:47:21 UTC+0000                                 
+0xfffffa8000eeb060 [01;31m[KDumpIt[m[K.exe             2208   1580      2       45      2      1 2019-12-20 03:47:39 UTC+0000                                 
+0xfffffa800108cb30 [01;31m[KNOTEPAD[m[K.EXE            2724   1580      1       39      2      1 2019-12-20 03:47:53 UTC+0000                                 
+0xfffffa800221ab30 [01;31m[KNOTEPAD[m[K.EXE            1388   1580      1       39      2      1 2019-12-20 03:48:00 UTC+0000                                 
+0xfffffa8000f02b30 [01;31m[KNOTEPAD[m[K.EXE            2056   1580      1      226 ------      1 2019-12-20 03:48:15 UTC+0000                                 
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hRAR_PID=$(grep -i winrar notes/pslist.txt | head -1 | awk '{print $3}'); echo "WinRAR PID = $RAR_PID"
+[K[A[29C[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m[8C[1mn[1mo[1mt[1me[1ms[1m/[1mp[1ms[1ml[1mi[1ms[1mt[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m3[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m [33m"[33mW[33mi[33mn[33mR[33mA[33mR[33m [33mP[33mI[33mD[33m [33m=[33m [1m[35m$[1m[35mR[1m[35mA[1m[35mR[1m[35m_[1m[35mP[1m[35mI[1m[35mD[0m[39m[33m"[39m[1B[K[K[A[122C[?1l>[?2004l[1BWinRAR PID = 2924
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG --profile=$P cmdline -p $RAR_PID
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[9C[32m-[32mp[39m[2B[K[K[A[K[A[65C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+************************************************************************
+WinRAR.exe pid:   2924
+Command line : "C:\Program Files\WinRAR\WinRAR.exe" "C:\Users\SmartNet\Documents\SW1wb3J0YW50.rar"
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hRARNAME=SW1wb3J0YW50.rar
+echo "${RARNAME%.rar}" | base64 -d ; echo[K[36me[36mc[36mh[36mo[39m [33m"[33m$[1m[34m{[0m[39m[33mR[33mA[33mR[33mN[33mA[33mM[33mE[33m%[33m.[33mr[33ma[33mr[1m[34m}[0m[39m[33m"[39m [1m[34m|[0m[39m [36mb[36ma[36ms[36me[36m6[36m4[39m [32m-[32md[39m [1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[?1l>[?2004l
+Important
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG --profile=$P filescan > notes/filescan.txt
+grep -i "\.rar" notes/filescan.txt[K[A[13D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[10C[1m[34m>[0m[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33m\[33m.[33mr[33ma[33mr[33m"[39m[19C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+0x000000003eed56f0      1      0 R--r-- \Device\HarddiskVolume2\Users\SmartNet\Documents\SW1wb3J0YW50[01;31m[K.rar[m[K
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hmkdir -p dump/rar
+OFF=$(grep -i "$RARNAME" notes/filescan.txt | head -1 | awk '{print $1}'); echo $OFF[K
+vol -f $IMG --profile=$P dumpfiles -Q $OFF -D dump/rar/[K[A[A[34D[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[1B[25D[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[1m[35m$[1m[35mR[1m[35mA[1m[35mR[1m[35mN[1m[35mA[1m[35mM[1m[35mE[0m[39m[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[6C[32m-[32mD[39m[10C[?1l>[?2004l
+0x000000003eed56f0
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3eed56f0   None   \Device\HarddiskVolume2\Users\SmartNet\Documents\SW1wb3J0YW50.rar
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hls -la dump/rar/[16D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mr[1ma[1mr[1m/[0m[?1l>[?2004l
+total 84
+drwxrwxr-x 2 ryo ryo  4096 Oct 11 00:40 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo  4096 Oct 11 00:40 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 77824 Oct 11 00:40 file.None.0xfffffa80010b44f0.dat
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hcp dump/rar/*.dat dump/$RARNAME[31D[36mc[36mp[39m[10C[1m[34m*[0m[39m[18C[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hfile dump/$RARNAME[18D[36mf[36mi[36ml[36me[39m[14C[?1l>[?2004l
+dump/SW1wb3J0YW50.rar: RAR archive data, v5
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hunrar l dump/$RARNAME
+unrar x dump/$RARNAME dump/[K[A[36mu[36mn[36mr[36ma[36mr[39m[1B[36mu[36mn[36mr[36ma[36mr[39m[17C[1md[1mu[1mm[1mp[1m/[0m[?1l>[?2004l
+
+UNRAR 7.30 beta 1 freeware      Copyright (c) 1993-2026 Alexander Roshal
+
+Archive: dump/SW1wb3J0YW50.rar
+Details: RAR 5
+
+ Attributes       Size     Date    Time   Name
+----------- ----------  ---------- -----  ----
+*   ..A....      83274  2019-12-19 07:24  Stage2.png
+----------- ----------  ---------- -----  ----
+                 83274                    1
+
+
+UNRAR 7.30 beta 1 freeware      Copyright (c) 1993-2026 Alexander Roshal
+
+Extracting from dump/SW1wb3J0YW50.rar
+
+Enter password (will not be echoed) for Stage2.png: 
+
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG --profile=$P cmdscan
+vol -f $IMG --profile=$P consoles[K
+vol -f $IMG --profile=$P envars | grep -iE "flag|pass|key"[K[A[A[37D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33mf[33ml[33ma[33mg[33m|[33mp[33ma[33ms[33ms[33m|[33mk[33me[33my[33m"[39m[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+**************************************************
+CommandProcess: conhost.exe Pid: 2612
+CommandHistory: 0x18ea90 Application: DumpIt.exe Flags: Allocated
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x60
+Cmd #15 @ 0x150158: 
+Cmd #16 @ 0x18dc00: 
+Volatility Foundation Volatility Framework 2.6
+**************************************************
+ConsoleProcess: conhost.exe Pid: 2612
+Console: 0xffdf6200 CommandHistorySize: 50
+HistoryBufferCount: 1 HistoryBufferMax: 4
+OriginalTitle: C:\Users\SmartNet\Downloads\DumpIt\DumpIt.exe
+Title: C:\Users\SmartNet\Downloads\DumpIt\DumpIt.exe
+AttachedProcess: DumpIt.exe Pid: 2208 Handle: 0x60
+----
+CommandHistory: 0x18ea90 Application: DumpIt.exe Flags: Allocated
+CommandCount: 0 LastAdded: -1 LastDisplayed: -1
+FirstCommand: 0 CommandCountMax: 50
+ProcessHandle: 0x60
+----
+Screen 0x171050 X:80 Y:300
+Dump:
+  DumpIt - v1.3.2.20110401 - One click memory memory dumper                     
+  Copyright (c) 2007 - 2011, Matthieu Suiche <http://www.msuiche.net>           
+  Copyright (c) 2010 - 2011, MoonSols <http://www.moonsols.com>                 
+                                                                                
+                                                                                
+    Address space size:        1073676288 bytes (   1023 Mb)                    
+    Free space size:          23048781824 bytes (  21981 Mb)                    
+                                                                                
+    * Destination = \??\C:\Users\SmartNet\Downloads\DumpIt\SMARTNET-PC-20191220-
+034740.raw                                                                      
+                                                                                
+    --> Are you sure you want to continue? [y/n] y                              
+    + Processing...                                                             
+Volatility Foundation Volatility Framework 2.6
+     320 csrss.exe            0x0000000000381320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     368 csrss.exe            0x00000000002e1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     376 psxss.exe            0x0000000000111320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     416 winlogon.exe         0x000000000041df20 windows_tracing_[01;31m[Kflag[m[Ks          3
+     428 wininit.exe          0x0000000000339b00 windows_tracing_[01;31m[Kflag[m[Ks          3
+     484 services.exe         0x00000000001d1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     492 lsass.exe            0x0000000000271320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     500 lsm.exe              0x0000000000331320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     588 svchost.exe          0x0000000000411320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     656 VBoxService.ex       0x0000000000255bf0 windows_tracing_[01;31m[Kflag[m[Ks          3
+     724 svchost.exe          0x00000000003b1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     820 svchost.exe          0x0000000000251320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     856 svchost.exe          0x0000000000161320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     880 svchost.exe          0x0000000000121320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     340 svchost.exe          0x00000000002b1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1044 svchost.exe          0x00000000002b1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1232 spoolsv.exe          0x00000000002e1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1272 svchost.exe          0x0000000000201320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1372 svchost.exe          0x0000000000291320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1416 TCPSVCS.EXE          0x0000000000161320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2012 taskhost.exe         0x0000000000261320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1140 taskeng.exe          0x00000000002e1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1172 dwm.exe              0x0000000000311320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1396 explorer.exe         0x00000000001ec090 windows_tracing_[01;31m[Kflag[m[Ks          3
+     528 VBoxTray.exe         0x00000000002a1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1800 SearchIndexer.       0x0000000000339f90 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1928 wmpnetwk.exe         0x0000000000324170 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2296 svchost.exe          0x0000000000371320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2572 WmiPrvSE.exe         0x00000000001d1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2940 sppsvc.exe           0x00000000000e1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1128 svchost.exe          0x00000000001fd050 windows_tracing_[01;31m[Kflag[m[Ks          3
+     668 dllhost.exe          0x0000000000321320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2608 SearchFilterHo       0x0000000000371320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     628 SearchProtocol       0x0000000000431320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1988 csrss.exe            0x0000000000411320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2120 winlogon.exe         0x00000000001bd190 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1968 taskhost.exe         0x0000000000171320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2360 dwm.exe              0x0000000000251320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    1580 explorer.exe         0x0000000003bb81d0 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2144 VBoxTray.exe         0x00000000002c1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2924 WinRAR.exe           0x0000000000071320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2744 notepad.exe          0x0000000000211320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2208 DumpIt.exe           0x00000000000d1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2612 conhost.exe          0x000000000016d800 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2724 NOTEPAD.EXE          0x0000000000101320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2632 svchost.exe          0x00000000003d1320 windows_tracing_[01;31m[Kflag[m[Ks          3
+    2716 WerFault.exe         0x0000000000641320 windows_tracing_[01;31m[Kflag[m[Ks          3
+     780 WerFault.exe         0x0000000000321320 windows_tracing_[01;31m[Kflag[m[Ks          3
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hvol -f $IMG --profile=$P iehistory > notes/iehistory.txt
+wc -l notes/iehistory.txt[K[A[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[1m[34m>[0m[39m[1B[36mw[36mc[39m [32m-[32ml[39m[20C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+6 notes/iehistory.txt
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hgrep -i "Location" notes/iehistory.txt | sort -u | head -60[59D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mL[33mo[33mc[33ma[33mt[33mi[33mo[33mn[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mi[1me[1mh[1mi[1ms[1mt[1mo[1mr[1my[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36ms[36mo[36mr[36mt[39m [32m-[32mu[39m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m6[32m0[39m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hcat notes/iehistory.txt[23D[36mc[36ma[36mt[39m [1mn[1mo[1mt[1me[1ms[1m/[1mi[1me[1mh[1mi[1ms[1mt[1mo[1mr[1my[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+**************************************************
+Process: 1396 explorer.exe
+Cache type "DEST" at 0x635910f
+Last modified: 2019-12-20 09:16:37 UTC+0000
+Last accessed: 2019-12-20 03:46:38 UTC+0000
+URL: Alissa Simpson@file:///C:/Windows/AppPatch/ZmxhZ3shIV93M0xMX2QwbjNfU3Q0ZzMtMV8wZl9MNEJfNV9EMG4zXyEhfQ.bmp
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hENC='ZmxhZ3shIV93M0xMX2QwbjNfU3Q0ZzMtMV8wZl9MNEJfNV9EMG4zXyEhfQ'
+B="$ENC"; while [ $(( ${#B} % 4 )) -ne 0 ]; do B="$B="; done[K
+echo "$B"[K[A[A[16C[33m'[33mZ[33mm[33mx[33mh[33mZ[33m3[33ms[33mh[33mI[33mV[33m9[33m3[33mM[33m0[33mx[33mM[33mX[33m2[33mQ[33mw[33mb[33mj[33mN[33mf[33mU[33m3[33mQ[33m0[33mZ[33mz[33mM[33mt[33mM[33mV[33m8[33mw[33mZ[33ml[33m9[33mM[33mN[33mE[33mJ[33mf[33mN[33mV[33m9[33mE[33mM[33mG[33m4[33mz[33mX[33my[33mE[33mh[33mf[33mQ[33m'[39m[1B[83D[33m"[1m[35m$[1m[35mE[1m[35mN[1m[35mC[0m[39m[33m"[39m[1m[34m;[0m[39m [1m[36mw[1m[36mh[1m[36mi[1m[36ml[1m[36me[0m[39m [1m[34m[[0m[39m[2C[1m[32m([0m[39m[1m[35m([0m[39m[2C[1m[33m{[0m[24m[39m[2C[1m[33m}[0m[24m[39m[5C[1m[35m)[0m[39m[1m[32m)[0m[39m [32m-[32mn[32me[39m[3C[1m[34m][0m[39m[1m[34m;[0m[39m [1m[36md[1m[36mo[0m[39m[3C[33m"[1m[35m$[1m[35mB[0m[39m[33m=[33m"[39m[1m[34m;[0m[39m [1m[36md[1m[36mo[1m[36mn[1m[36me[0m[39m[1B[36me[36mc[36mh[36mo[39m [33m"[1m[35m$[1m[35mB[0m[39m[33m"[39m[?1l>[?2004l
+ZmxhZ3shIV93M0xMX2QwbjNfU3Q0ZzMtMV8wZl9MNEJfNV9EMG4zXyEhfQ==
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab5
+[0m[27m[24m[J[ryo@02230297 Lab5]$ [K[?1h=[?2004hFLAG1=$(echo "$B" | base64 -d)
+echo "$FLAG1"[K[A[14C[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [33m"[1m[35m$[1m[35mB[0m[39m[33m"[39m [1m[34m|[0m[39m [36mb[36ma[36ms[36me[36m6[36m4[39m [32m-[32md[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m [33m"[1m[35m$[1m[35mF[1m[35mL[1m[35mA[1m[35mG[1m[35m1[0m[39m[33m"[39m[?1l>[?2004l
+flag{!!_w3LL_d0n3_St4g3-1_0f_L4B_5_D0n3_!!}
+                                                                                                                                                     

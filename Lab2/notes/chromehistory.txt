@@ -1,0 +1,1 @@
+*** Failed to import volatility.plugins.chromehistory (ImportError: No module named Protocol.KDF)

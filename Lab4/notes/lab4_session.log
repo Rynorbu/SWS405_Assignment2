@@ -1,0 +1,520 @@
+Script started on 2026-10-10 23:55:09-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="158" LINES="35"]
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4[0m[27m[24m[J[32m┌──([1m[32m[34mryo㉿kali[0m[34m[32m)-[[1m[32m[39m~/memlabs/Lab4[0m[32m]
+└─[1m[32m[34m$[0m[34m[39m [K[?1h=[?2004h[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[32m┌──([1m[32m[34mryo㉿kali[0m[34m[32m)-[[1m[32m[39m~/memlabs/Lab4[0m[32m]
+└─[1m[32m[34m$[0m[34m[39m [K[?1h=[?2004hPROMPT='[%n@02230297 %1~]$ '
+[K[A[11C[33m'[1m[34m[[0m[39m[33m%[33mn[33m@[33m0[33m2[33m2[33m3[33m0[33m2[33m9[33m7[33m [33m%[33m1[33m~[1m[34m][0m[39m[33m$[33m [33m'[39m[1B[K[K[A[32C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hIMG=MemoryDump_Lab4.raw
+[K[A[25C[1mM[1me[1mm[1mo[1mr[1my[1mD[1mu[1mm[1mp[1m_[1mL[1ma[1mb[1m4[1m.[1mr[1ma[1mw[0m[1B[K[K[A[44C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hdate; whoami
+[K[A[21C[36md[36ma[36mt[36me[39m[1m[34m;[0m[39m [36mw[36mh[36mo[36ma[36mm[36mi[39m[1B[K[K[A[33C[?1l>[?2004l[1BSat Oct 10 11:55:35 PM EDT 2026
+ryo
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hmd5sum $IMG
+sha256sum $IMG[K[A[7C[36mm[36md[36m5[36ms[36mu[36mm[39m[1B[36ms[36mh[36ma[36m2[36m5[36m6[36ms[36mu[36mm[39m[5C[?1l>[?2004l
+b0dd82624c51d4b2d689ba38812aa9e1  MemoryDump_Lab4.raw
+53289a00f74397798928603356c81ae9d3cd3aff009472307e9d364fad252c49  MemoryDump_Lab4.raw
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hvol -f $IMG imageinfo
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[2B[K[K[A[1B[K[A[K[1B[K[A[A[42C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : Win7SP1x64, Win7SP0x64, Win2008R2SP0x64, Win2008R2SP1x64_23418, Win2008R2SP1x64, Win7SP1x64_23418
+                     AS Layer1 : WindowsAMD64PagedMemory (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw)
+                      PAE type : No PAE
+                           DTB : 0x187000L
+                          KDBG : 0xf800027f60a0L
+          Number of Processors : 1
+     Image Type (Service Pack) : 1
+                KPCR for CPU 0 : 0xfffff800027f7d00L
+             KUSER_SHARED_DATA : 0xfffff78000000000L
+           Image date and time : 2019-06-29 07:30:00 UTC+0000
+     Image local date and time : 2019-06-29 13:00:00 +0530
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hP=Win7SP1x64
+[K
+[K[K[K[A[K[A[33C[?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hvol -f $IMG --profile=$P pslist | tee notes/pslist.txt
+vol -f $IMG --profile=$P pstree | tee notes/pstree.txt[K[A[33D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[17C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+------------------ -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+Traceback (most recent call last):
+  File "vol.py", line 192, in <module>
+  File "vol.py", line 183, in main
+  File "volatility/commands.py", line 147, in execute
+  File "volatility/plugins/taskmods.py", line 199, in render_text
+  File "volatility/win32/tasks.py", line 88, in pslist
+  File "volatility/plugins/overlays/windows/kdbg_vtypes.py", line 42, in processes
+AttributeError: Could not list tasks, please verify your --profile with kdbgscan
+Failed to execute script vol
+Volatility Foundation Volatility Framework 2.6
+Traceback (most recent call last):
+  File "vol.py", line 192, in <module>
+  File "vol.py", line 183, in main
+  File "volatility/commands.py", line 120, in execute
+  File "volatility/cache.py", line 592, in wrapper
+  File "volatility/plugins/pstree.py", line 175, in calculate
+  File "volatility/plugins/pstree.py", line 174, in <genexpr>
+  File "volatility/win32/tasks.py", line 88, in pslist
+  File "volatility/plugins/overlays/windows/kdbg_vtypes.py", line 42, in processes
+AttributeError: Could not list tasks, please verify your --profile with kdbgscan
+Failed to execute script vol
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hvol -f $IMG kdbgscan | tee notes/kdbgscan.txt[45D[36mv[36mo[36ml[39m [32m-[32mf[39m[15C[1m[34m|[0m[39m [36mt[36me[36me[39m[19C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP1x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP1x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP1x64_23418
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP0x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP1x64_23418
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP0x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hProfile[4mP[4mr[4mo[4mf[4mi[4ml[4me[24m[4ml[24m[24m [4mi[24m[24m [4mf[24m[24m [4mo[24m[24m [4mP[4mr[24m[24m [4mP[24m[24m [4mP[24m[38;5;244m=Win7SP1x64[39m[11D[24m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [12Dgrep -E "Offset \(V\)|Profile suggestion|PsActiveProcessHead" notes/kdbgscan.txt[80D[36mg[36mr[36me[36mp[39m [32m-[32mE[39m [33m"[33mO[33mf[33mf[33ms[33me[33mt[33m [33m\[1m[34m([0m[39m[33mV[33m\[1m[34m)[0m[39m[33m|[33mP[33mr[33mo[33mf[33mi[33ml[33me[33m [33ms[33mu[33mg[33mg[33me[33ms[33mt[33mi[33mo[33mn[33m|[33mP[33ms[33mA[33mc[33mt[33mi[33mv[33me[33mP[33mr[33mo[33mc[33me[33ms[33ms[33mH[33me[33ma[33md[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mk[1md[1mb[1mg[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win7SP1x64
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win2008R2SP1x64
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win7SP1x64_23418
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win2008R2SP0x64
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win2008R2SP1x64_23418
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+[01;31m[KProfile suggestion[m[K (KDBGHeader): Win7SP0x64
+[01;31m[KPsActiveProcessHead[m[K           : 0x282cb90
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h--profile[9D[4m-[4m-[4mp[4mr[4mo[4mf[4mi[4ml[4me[24m[?1l>[?2004l
+--profile: command not found
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h--profile[9D[4m-[4m-[4mp[4mr[4mo[4mf[4mi[4ml[4me[24m[4ml[24m[24m [38;5;244me[39m[4mi[24m[24m [39m [38;5;244mle[39m[4mf[24m[24m [39m [39m [38;5;244mile[39m[4mo[24m[24m [39m [39m [39m [38;5;244mfile[39m[4mr[24m[24m [39m [39m [39m [39m [38;5;244mofile[39m[4mp[24m[24m [39m [39m [39m [39m [39m [38;5;244mrofile[39m[4m-[4m-[24m[24m [39m [39m [39m [39m [39m [39m [38;5;244mprofile[39m[4m-[24m[24m [39m [39m [39m [39m [39m [39m [39m [8D[4m[32m-[24m[39m[4m[32m-[24m[39m[38;5;244m-profile[39m[8D[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [9Dvol -f $IMG --profile=$P psscan | tee notes/psscan.txt[54D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[17C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+Offset(P)          Name                PID   PPID PDB                Time created                   Time exited                   
+------------------ ---------------- ------ ------ ------------------ ------------------------------ ------------------------------
+0x000000003e801ab0 SearchIndexer.     1068    472 0x0000000007af7000 2019-06-29 07:28:58 UTC+0000                                 
+0x000000003e86e910 SearchProtocol     1696   1068 0x000000003c8fe000 2019-06-29 07:29:02 UTC+0000                                 
+0x000000003e879890 SearchFilterHo     1688   1068 0x000000003c81d000 2019-06-29 07:29:02 UTC+0000                                 
+0x000000003e892b30 dllhost.exe        2076    580 0x000000003c087000 2019-06-29 07:29:02 UTC+0000                                 
+0x000000003e8f0610 GoogleCrashHan     2272   2008 0x0000000037c34000 2019-06-29 07:29:08 UTC+0000                                 
+0x000000003e8f6b30 GoogleCrashHan     2284   2008 0x00000000379fb000 2019-06-29 07:29:08 UTC+0000                                 
+0x000000003e920350 conhost.exe        2636    376 0x000000003128d000 2019-06-29 07:29:25 UTC+0000                                 
+0x000000003e930060 winlogon.exe       2728   2692 0x00000000309ba000 2019-06-29 07:29:30 UTC+0000                                 
+0x000000003ea94630 csrss.exe          2672   2692 0x0000000034e00000 2019-06-29 07:29:51 UTC+0000   2019-06-29 07:29:59 UTC+0000  
+0x000000003eaa4420 DumpIt.exe         2624   1944 0x00000000317c7000 2019-06-29 07:29:25 UTC+0000                                 
+0x000000003eabbb30 dwm.exe            1908    840 0x0000000010db2000 2019-06-29 07:28:43 UTC+0000                                 
+0x000000003eaf7b30 explorer.exe       1944   1872 0x0000000010b28000 2019-06-29 07:28:44 UTC+0000                                 
+0x000000003ebabab0 VBoxTray.exe       1592   1944 0x000000000bdc9000 2019-06-29 07:28:53 UTC+0000                                 
+0x000000003ec1b890 svchost.exe         220    472 0x000000001b11b000 2019-06-29 07:28:27 UTC+0000                                 
+0x000000003ec45630 svchost.exe         484    472 0x000000001a762000 2019-06-29 07:28:29 UTC+0000                                 
+0x000000003ecaab30 spoolsv.exe        1132    472 0x0000000017a7d000 2019-06-29 07:28:32 UTC+0000                                 
+0x000000003ecd7b30 svchost.exe        1176    472 0x0000000014c45000 2019-06-29 07:28:33 UTC+0000                                 
+0x000000003ed452e0 svchost.exe        1276    472 0x000000001483e000 2019-06-29 07:28:34 UTC+0000                                 
+0x000000003ed81b30 taskhost.exe       1804    472 0x0000000011ae1000 2019-06-29 07:28:42 UTC+0000                                 
+0x000000003edf9630 taskeng.exe        1824    864 0x00000000114a7000 2019-06-29 07:28:42 UTC+0000                                 
+0x000000003edfab30 LogonUI.exe        2148    536 0x000000002342b000 2019-06-29 07:29:51 UTC+0000   2019-06-29 07:29:59 UTC+0000  
+0x000000003ee57b30 csrss.exe           328    320 0x000000001ff15000 2019-06-29 07:28:14 UTC+0000                                 
+0x000000003ee6f760 wininit.exe         384    320 0x000000001f65b000 2019-06-29 07:28:15 UTC+0000                                 
+0x000000003ee751f0 winlogon.exe        412    368 0x000000001f4e3000 2019-06-29 07:28:15 UTC+0000                                 
+0x000000003eeac460 csrss.exe          2700   2692 0x0000000031175000 2019-06-29 07:29:30 UTC+0000                                 
+0x000000003eeb5940 lsass.exe           480    384 0x000000001e9cd000 2019-06-29 07:28:17 UTC+0000                                 
+0x000000003eec1b30 lsm.exe             488    384 0x000000001e655000 2019-06-29 07:28:17 UTC+0000                                 
+0x000000003ef02b30 svchost.exe         580    472 0x000000001d957000 2019-06-29 07:28:21 UTC+0000                                 
+0x000000003ef30b30 VBoxService.ex      640    472 0x000000001d676000 2019-06-29 07:28:21 UTC+0000                                 
+0x000000003ef43a70 svchost.exe         708    472 0x000000001d106000 2019-06-29 07:28:22 UTC+0000                                 
+0x000000003efacb30 svchost.exe         804    472 0x000000001c7b4000 2019-06-29 07:28:23 UTC+0000                                 
+0x000000003efb9b30 svchost.exe         840    472 0x000000001c402000 2019-06-29 07:28:24 UTC+0000                                 
+0x000000003efc6850 svchost.exe         864    472 0x000000001c489000 2019-06-29 07:28:24 UTC+0000                                 
+0x000000003eff1060 audiodg.exe         952    804 0x000000001b741000 2019-06-29 07:28:26 UTC+0000                                 
+0x000000003f1c1b30 services.exe        472    384 0x000000001e82c000 2019-06-29 07:28:17 UTC+0000                                 
+0x000000003f6af950 smss.exe            256      4 0x00000000278f3000 2019-06-29 07:28:07 UTC+0000                                 
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hvol -f $IMG --profile=$P filescan > notes/filescan.txt
+grep -i "\\\\Desktop\\\\" notes/filescan.txt[K[A[23D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[10C[1m[34m>[0m[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[1m[35m\[1m[35m\[0m[39m[1m[35m\[1m[35m\[0m[39m[33mD[33me[33ms[33mk[33mt[33mo[33mp[1m[35m\[1m[35m\[0m[39m[1m[35m\[1m[35m\[0m[39m[33m"[39m[19C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+0x000000003e8ad250     14      0 R--r-- \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[Kgalf.jpeg
+0x000000003e8d19e0     16      0 R--r-- \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KScreenshot1.png
+0x000000003e8da630      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt
+0x000000003e912190      6      0 R--r-d \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt\DumpIt.exe
+0x000000003e9189d0     10      0 R--r-d \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt\DumpIt.exe
+0x000000003e922070      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt
+0x000000003eb91820     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[Kdesktop.ini
+0x000000003eb95f20     16      0 R--rwd \Device\HarddiskVolume2\Users\Public[01;31m[K\Desktop\[m[Kdesktop.ini
+0x000000003ebbdac0     16      0 R--rw- \Device\HarddiskVolume2\Users\Public[01;31m[K\Desktop\[m[KGoogle Chrome.lnk
+0x000000003ebe2a20      1      1 RW-rw- \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt\2PAC-20190629-072925.raw
+0x000000003f9ffcb0      1      1 R--rw- \Device\HarddiskVolume2\Users\eminem[01;31m[K\Desktop\[m[KDumpIt
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hgrep -i "desktop" notes/filescan.txt[36D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33md[33me[33ms[33mk[33mt[33mo[33mp[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+0x000000003e83b2d0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Videos\[01;31m[Kdesktop[m[K.ini
+0x000000003e896a50      2      0 R--rwd \Device\HarddiskVolume2\Program Files\[01;31m[Kdesktop[m[K.ini
+0x000000003e8aa6f0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Recent\[01;31m[Kdesktop[m[K.ini
+0x000000003e8ad250     14      0 R--r-- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\galf.jpeg
+0x000000003e8b1a50      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Local\Microsoft\Windows\History\[01;31m[Kdesktop[m[K.ini
+0x000000003e8d19e0     16      0 R--r-- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\Screenshot1.png
+0x000000003e8da630      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+0x000000003e8eb3b0      2      0 R--rwd \Device\HarddiskVolume2\Users\Public\Videos\[01;31m[Kdesktop[m[K.ini
+0x000000003e8f1aa0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Links\[01;31m[Kdesktop[m[K.ini
+0x000000003e90df20      2      0 R--rwd \Device\HarddiskVolume2\Users\SlimShady\AppData\Local\Microsoft\Windows\History\[01;31m[Kdesktop[m[K.ini
+0x000000003e912190      6      0 R--r-d \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\DumpIt.exe
+0x000000003e9189d0     10      0 R--r-d \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\DumpIt.exe
+0x000000003e922070      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+0x000000003ead6cc0      2      1 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K
+0x000000003eae05d0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Pictures\[01;31m[Kdesktop[m[K.ini
+0x000000003eafdc80     16      0 R--rwd \Device\HarddiskVolume2\Windows\Globalization\MCT\MCT-US\Wallpaper\[01;31m[Kdesktop[m[K.ini
+0x000000003eafe790     16      0 R--rwd \Device\HarddiskVolume2\Users\[01;31m[Kdesktop[m[K.ini
+0x000000003eb10f20     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Pictures\[01;31m[Kdesktop[m[K.ini
+0x000000003eb5ad10      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K
+0x000000003eb8ab30     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Local\Microsoft\Windows\Burn\Burn\[01;31m[Kdesktop[m[K.ini
+0x000000003eb8bc90      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\[01;31m[Kdesktop[m[K.ini
+0x000000003eb8ff20      2      1 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K
+0x000000003eb91820     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\[01;31m[Kdesktop[m[K.ini
+0x000000003eb94680     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[Kdesktop[m[K.ini
+0x000000003eb95f20     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K\[01;31m[Kdesktop[m[K.ini
+0x000000003eb96870      2      0 R--rwd \Device\HarddiskVolume2\$Recycle.Bin\S-1-5-21-410795266-795571449-2132107757-1000\[01;31m[Kdesktop[m[K.ini
+0x000000003eba11c0     16      0 R--rwd \Device\HarddiskVolume2\Program Files (x86)\[01;31m[Kdesktop[m[K.ini
+0x000000003eba3e60      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K
+0x000000003eba4d00     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\[01;31m[Kdesktop[m[K.ini
+0x000000003eba6d10     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\[01;31m[Kdesktop[m[K.ini
+0x000000003eba84b0     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\[01;31m[Kdesktop[m[K.ini
+0x000000003eba8790     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\[01;31m[Kdesktop[m[K.ini
+0x000000003ebaaf20      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\[01;31m[KDesktop[m[K.ini
+0x000000003ebab1e0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\Accessibility\[01;31m[KDesktop[m[K.ini
+0x000000003ebab650      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Maintenance\[01;31m[KDesktop[m[K.ini
+0x000000003ebac710      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Administrative Tools\[01;31m[Kdesktop[m[K.ini
+0x000000003ebaee50     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\[01;31m[Kdesktop[m[K.ini
+0x000000003ebafa90      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\[01;31m[KDesktop[m[K.ini
+0x000000003ebb1500     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\[01;31m[KDesktop[m[K.ini
+0x000000003ebb2070     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb3d10     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\[01;31m[KDesktop[m[K.ini
+0x000000003ebb49a0     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Maintenance\[01;31m[KDesktop[m[K.ini
+0x000000003ebb5b70     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Windows PowerShell\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb6dd0     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\[01;31m[KDesktop[m[K.ini
+0x000000003ebb6f20     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Accessibility\[01;31m[KDesktop[m[K.ini
+0x000000003ebb7f20     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb8070     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Tablet PC\[01;31m[KDesktop[m[K.ini
+0x000000003ebb99c0     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Libraries\[01;31m[Kdesktop[m[K.ini
+0x000000003ebbdac0     16      0 R--rw- \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K\Google Chrome.lnk
+0x000000003ebbfa70      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\[01;31m[Kdesktop[m[K.ini
+0x000000003ebcd590      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Documents\[01;31m[Kdesktop[m[K.ini
+0x000000003ebcf070     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Documents\[01;31m[Kdesktop[m[K.ini
+0x000000003ebdc890      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Music\[01;31m[Kdesktop[m[K.ini
+0x000000003ebdcd40     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Music\[01;31m[Kdesktop[m[K.ini
+0x000000003ebe2a20      1      1 RW-rw- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\2PAC-20190629-072925.raw
+0x000000003f633d50      2      0 R--rwd \Device\HarddiskVolume2\Users\SlimShady\AppData\Roaming\Microsoft\Windows\Recent\[01;31m[Kdesktop[m[K.ini
+0x000000003f9ffcb0      1      1 R--rw- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hSTEGIMG=$(grep -i "desktop" notes/filescan.txt | grep -iE "\.(jpe?g|png)$" | head -1 | awk -F'\\' '{print $NF}')
+TXTFILE=$(grep -i "desktop" notes/filescan.txt | grep -iE "\.txt$" | head -1 | awk -F'\\' '{print $NF}')[K[A[75D[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33md[33me[33ms[33mk[33mt[33mo[33mp[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33m\[33m.[1m[32m([0m[39m[33mj[33mp[33me[33m?[33mg[33m|[33mp[33mn[33mg[1m[32m)[0m[39m[33m$[33m"[39m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [32m-[32mF[33m'[33m\[33m\[33m'[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33mN[33mF[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[125D[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33md[33me[33ms[33mk[33mt[33mo[33mp[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33m\[33m.[33mt[33mx[33mt[33m$[33m"[39m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [32m-[32mF[33m'[33m\[33m\[33m'[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33mN[33mF[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hecho "Image: $STEGIMG"
+echo "Text : $TXTFILE"[K[A[36me[36mc[36mh[36mo[39m [33m"[33mI[33mm[33ma[33mg[33me[33m:[33m [1m[35m$[1m[35mS[1m[35mT[1m[35mE[1m[35mG[1m[35mI[1m[35mM[1m[35mG[0m[39m[33m"[39m[1B[36me[36mc[36mh[36mo[39m [33m"[33mT[33me[33mx[33mt[33m [33m:[33m [1m[35m$[1m[35mT[1m[35mX[1m[35mT[1m[35mF[1m[35mI[1m[35mL[1m[35mE[0m[39m[33m"[39m[?1l>[?2004l
+Image: galf.jpeg
+Text : 
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hgrep -i "desktop" notes/filescan.txt
+grep -i "\.txt" notes/filescan.txt | grep -iv "windows\|program"[K
+grep -i "important" notes/filescan.txt[K[A[A[17D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33md[33me[33ms[33mk[33mt[33mo[33mp[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33m\[33m.[33mt[33mx[33mt[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[32mv[39m [33m"[33mw[33mi[33mn[33md[33mo[33mw[33ms[33m\[33m|[33mp[33mr[33mo[33mg[33mr[33ma[33mm[33m"[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mi[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+0x000000003e83b2d0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Videos\[01;31m[Kdesktop[m[K.ini
+0x000000003e896a50      2      0 R--rwd \Device\HarddiskVolume2\Program Files\[01;31m[Kdesktop[m[K.ini
+0x000000003e8aa6f0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Recent\[01;31m[Kdesktop[m[K.ini
+0x000000003e8ad250     14      0 R--r-- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\galf.jpeg
+0x000000003e8b1a50      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Local\Microsoft\Windows\History\[01;31m[Kdesktop[m[K.ini
+0x000000003e8d19e0     16      0 R--r-- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\Screenshot1.png
+0x000000003e8da630      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+0x000000003e8eb3b0      2      0 R--rwd \Device\HarddiskVolume2\Users\Public\Videos\[01;31m[Kdesktop[m[K.ini
+0x000000003e8f1aa0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Links\[01;31m[Kdesktop[m[K.ini
+0x000000003e90df20      2      0 R--rwd \Device\HarddiskVolume2\Users\SlimShady\AppData\Local\Microsoft\Windows\History\[01;31m[Kdesktop[m[K.ini
+0x000000003e912190      6      0 R--r-d \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\DumpIt.exe
+0x000000003e9189d0     10      0 R--r-d \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\DumpIt.exe
+0x000000003e922070      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+0x000000003ead6cc0      2      1 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K
+0x000000003eae05d0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Pictures\[01;31m[Kdesktop[m[K.ini
+0x000000003eafdc80     16      0 R--rwd \Device\HarddiskVolume2\Windows\Globalization\MCT\MCT-US\Wallpaper\[01;31m[Kdesktop[m[K.ini
+0x000000003eafe790     16      0 R--rwd \Device\HarddiskVolume2\Users\[01;31m[Kdesktop[m[K.ini
+0x000000003eb10f20     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Pictures\[01;31m[Kdesktop[m[K.ini
+0x000000003eb5ad10      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K
+0x000000003eb8ab30     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Local\Microsoft\Windows\Burn\Burn\[01;31m[Kdesktop[m[K.ini
+0x000000003eb8bc90      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\[01;31m[Kdesktop[m[K.ini
+0x000000003eb8ff20      2      1 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K
+0x000000003eb91820     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\[01;31m[Kdesktop[m[K.ini
+0x000000003eb94680     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[Kdesktop[m[K.ini
+0x000000003eb95f20     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K\[01;31m[Kdesktop[m[K.ini
+0x000000003eb96870      2      0 R--rwd \Device\HarddiskVolume2\$Recycle.Bin\S-1-5-21-410795266-795571449-2132107757-1000\[01;31m[Kdesktop[m[K.ini
+0x000000003eba11c0     16      0 R--rwd \Device\HarddiskVolume2\Program Files (x86)\[01;31m[Kdesktop[m[K.ini
+0x000000003eba3e60      2      1 R--rwd \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K
+0x000000003eba4d00     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\[01;31m[Kdesktop[m[K.ini
+0x000000003eba6d10     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\[01;31m[Kdesktop[m[K.ini
+0x000000003eba84b0     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\[01;31m[Kdesktop[m[K.ini
+0x000000003eba8790     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\[01;31m[Kdesktop[m[K.ini
+0x000000003ebaaf20      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\[01;31m[KDesktop[m[K.ini
+0x000000003ebab1e0      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\Accessibility\[01;31m[KDesktop[m[K.ini
+0x000000003ebab650      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Maintenance\[01;31m[KDesktop[m[K.ini
+0x000000003ebac710      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Administrative Tools\[01;31m[Kdesktop[m[K.ini
+0x000000003ebaee50     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\[01;31m[Kdesktop[m[K.ini
+0x000000003ebafa90      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\[01;31m[KDesktop[m[K.ini
+0x000000003ebb1500     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\[01;31m[KDesktop[m[K.ini
+0x000000003ebb2070     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Administrative Tools\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb3d10     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Games\[01;31m[KDesktop[m[K.ini
+0x000000003ebb49a0     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Maintenance\[01;31m[KDesktop[m[K.ini
+0x000000003ebb5b70     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Windows PowerShell\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb6dd0     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\System Tools\[01;31m[KDesktop[m[K.ini
+0x000000003ebb6f20     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Accessibility\[01;31m[KDesktop[m[K.ini
+0x000000003ebb7f20     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Startup\[01;31m[Kdesktop[m[K.ini
+0x000000003ebb8070     16      0 R--rwd \Device\HarddiskVolume2\ProgramData\Microsoft\Windows\Start Menu\Programs\Accessories\Tablet PC\[01;31m[KDesktop[m[K.ini
+0x000000003ebb99c0     16      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Windows\Libraries\[01;31m[Kdesktop[m[K.ini
+0x000000003ebbdac0     16      0 R--rw- \Device\HarddiskVolume2\Users\Public\[01;31m[KDesktop[m[K\Google Chrome.lnk
+0x000000003ebbfa70      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\AppData\Roaming\Microsoft\Internet Explorer\Quick Launch\User Pinned\TaskBar\[01;31m[Kdesktop[m[K.ini
+0x000000003ebcd590      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Documents\[01;31m[Kdesktop[m[K.ini
+0x000000003ebcf070     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Documents\[01;31m[Kdesktop[m[K.ini
+0x000000003ebdc890      2      0 R--rwd \Device\HarddiskVolume2\Users\eminem\Music\[01;31m[Kdesktop[m[K.ini
+0x000000003ebdcd40     16      0 R--rwd \Device\HarddiskVolume2\Users\Public\Music\[01;31m[Kdesktop[m[K.ini
+0x000000003ebe2a20      1      1 RW-rw- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt\2PAC-20190629-072925.raw
+0x000000003f633d50      2      0 R--rwd \Device\HarddiskVolume2\Users\SlimShady\AppData\Roaming\Microsoft\Windows\Recent\[01;31m[Kdesktop[m[K.ini
+0x000000003f9ffcb0      1      1 R--rw- \Device\HarddiskVolume2\Users\eminem\[01;31m[KDesktop[m[K\DumpIt
+0x000000003e88a8c0      1      1 -W-rw- \Device\HarddiskVolume2\Users\eminem\AppData\Local\Temp\FXSAPIDebugLogFile.txt
+0x000000003f939720      2      0 RW-rw- \Device\HarddiskVolume2\Users\SlimShady\AppData\Roaming\Microsoft\Windows\Recent\[01;31m[KImportant[m[K.lnk
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hSTEGIMG=galf.jpeg
+TXTFILE=Important.txt[K[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hmkdir -p dump/image
+OFF=$(grep -i "$STEGIMG" notes/filescan.txt | head -1 | awk '{print $1}'); echo $OFF[K
+vol -f $IMG --profile=$P dumpfiles -Q $OFF -D dump/image/[K[A[A[36D[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[1B[25D[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[1m[35m$[1m[35mS[1m[35mT[1m[35mE[1m[35mG[1m[35mI[1m[35mM[1m[35mG[0m[39m[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[6C[32m-[32mD[39m[12C[?1l>[?2004l
+0x000000003e8ad250
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3e8ad250   None   \Device\HarddiskVolume2\Users\eminem\Desktop\galf.jpeg
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hls -la dump/image/[18D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mi[1mm[1ma[1mg[1me[1m/[0m[?1l>[?2004l
+total 232
+drwxrwxr-x 2 ryo ryo   4096 Oct 11 00:08 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo   4096 Oct 11 00:08 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 229376 Oct 11 00:08 file.None.0xfffffa80022ad0f0.dat
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hxdg-open dump/$STEGIMG[22D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m[14C[?1l>[?2004l
+gio: file:///home/ryo/memlabs/Lab4/dump/galf.jpeg: Error when getting information for file “/home/ryo/memlabs/Lab4/dump/galf.jpeg”: No such file or directory
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab4]$ [0m[27m[24m[J[ryo@02230297 Lab4]$ mkdir -p dump/lnk
+vol -f $IMG --profile=$P dumpfiles -Q 0x000000003f939720 -D dump/lnk/[K
+ls -la dump/lnk/[K[A[A[5C[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[20C[32m-[32mD[39m[1B[36ml[36ms[39m [32m-[32ml[32ma[39m[10C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3f939720   None   \Device\HarddiskVolume2\Users\SlimShady\AppData\Roaming\Microsoft\Windows\Recent\Important.lnk
+total 12
+drwxrwxr-x 2 ryo ryo 4096 Oct 11 00:09 [0m[01;34m.[0m
+drwxrwxr-x 4 ryo ryo 4096 Oct 11 00:09 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 4096 Oct 11 00:09 file.None.0xfffffa80013f7e40.dat
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hcp dump/image/file.None.0xfffffa80022ad0f0.dat dump/galf.jpeg[61D[36mc[36mp[39m [1md[1mu[1mm[1mp[1m/[1mi[1mm[1ma[1mg[1me[1m/[1mf[1mi[1ml[1me[1m.[1mN[1mo[1mn[1me[1m.[1m0[1mx[1mf[1mf[1mf[1mf[1mf[1ma[1m8[1m0[1m0[1m2[1m2[1ma[1md[1m0[1mf[1m0[1m.[1md[1ma[1mt[0m[15C[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hfile dump/galf.jpeg[19D[36mf[36mi[36ml[36me[39m [1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m[?1l>[?2004l
+dump/galf.jpeg: JPEG image data, JFIF standard 1.01, aspect ratio, density 1x1, segment length 16, baseline, precision 8, 1500x844, components 3
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hxdg-open dump/galf.jpeg[23D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab4]$ exiftool dump/galf.jpeg[23D[36me[36mx[36mi[36mf[36mt[36mo[36mo[36ml[39m [1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m[?1l>[?2004l
+ExifTool Version Number         : 13.25
+File Name                       : galf.jpeg
+Directory                       : dump
+File Size                       : 229 kB
+File Modification Date/Time     : 2026:10:11 00:09:40-04:00
+File Access Date/Time           : 2026:10:11 00:09:45-04:00
+File Inode Change Date/Time     : 2026:10:11 00:09:40-04:00
+File Permissions                : -rw-rw-r--
+File Type                       : JPEG
+File Type Extension             : jpg
+MIME Type                       : image/jpeg
+JFIF Version                    : 1.01
+Resolution Unit                 : None
+X Resolution                    : 1
+Y Resolution                    : 1
+Image Width                     : 1500
+Image Height                    : 844
+Encoding Process                : Baseline DCT, Huffman coding
+Bits Per Sample                 : 8
+Color Components                : 3
+Y Cb Cr Sub Sampling            : YCbCr4:2:0 (2 2)
+Image Size                      : 1500x844
+Megapixels                      : 1.3
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hstrings -n 6 dump/galf.jpeg | grep -iE "inctf|flag|pass"[56D[36ms[36mt[36mr[36mi[36mn[36mg[36ms[39m [32m-[32mn[39m[3C[1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33mi[33mn[33mc[33mt[33mf[33m|[33mf[33ml[33ma[33mg[33m|[33mp[33ma[33ms[33ms[33m"[39m[?1l>[?2004l
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hbinwalk dump/galf.jpeg[22D[36mb[36mi[36mn[36mw[36ma[36ml[36mk[39m [1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m[?1l>[?2004l
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             JPEG image data, JFIF standard 1.01
+
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hsteghide extract -sf dump/galf.jpeg -p "" -xf dump/stego_out.txt[64D[36ms[36mt[36me[36mg[36mh[36mi[36md[36me[39m[9C[32m-[32ms[32mf[39m [1md[1mu[1mm[1mp[1m/[1mg[1ma[1ml[1mf[1m.[1mj[1mp[1me[1mg[0m [32m-[32mp[39m [33m"[33m"[39m [32m-[32mx[32mf[39m[19C[?1l>[?2004l
+wrote extracted data to "dump/stego_out.txt".
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hmkdir -p dump/txt[17D[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[9C[?1l>[?2004l
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hvol -f $IMG --profile=$P dumpfiles -r "Important\.txt" -i -D dump/txt/
+ls -la dump/txt/[K[A[5C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mr[39m [33m"[33mI[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m\[33m.[33mt[33mx[33mt[33m"[39m [32m-[32mi[39m [32m-[32mD[39m [1md[1mu[1mm[1mp[1m/[1mt[1mx[1mt[1m/[0m[1B[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mt[1mx[1mt[1m/[0m[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+Traceback (most recent call last):
+  File "vol.py", line 192, in <module>
+  File "vol.py", line 183, in main
+  File "volatility/commands.py", line 147, in execute
+  File "volatility/plugins/dumpfiles.py", line 1181, in render_text
+  File "volatility/plugins/dumpfiles.py", line 828, in calculate
+  File "volatility/win32/tasks.py", line 88, in pslist
+  File "volatility/plugins/overlays/windows/kdbg_vtypes.py", line 42, in processes
+AttributeError: Could not list tasks, please verify your --profile with kdbgscan
+Failed to execute script vol
+total 8
+drwxrwxr-x 2 ryo ryo 4096 Oct 11 00:12 [0m[01;34m.[0m
+drwxrwxr-x 5 ryo ryo 4096 Oct 11 00:12 [01;34m..[0m
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004htime vol -f $IMG --profile=$P mftparser > notes/mftparser.txt
+grep -n -i "Important.txt" notes/mftparser.txt[K
+grep -i -A 40 "Important.txt" notes/mftparser.txt[K[A[A[28D[1m[36mt[1m[36mi[1m[36mm[1m[36me[0m[39m [36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[1m[34m>[0m[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mn[39m [32m-[32mi[39m [33m"[33mI[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m.[33mt[33mx[33mt[33m"[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [32m-[32mA[39m[4C[33m"[33mI[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m.[33mt[33mx[33mt[33m"[39m[20C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+
+real	19.36s
+user	17.90s
+sys	1.45s
+cpu	99%
+[32m[K164456[m[K[36m[K:[m[K2019-06-27 13:14:13 UTC+0000 2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   Users\SlimShady\Desktop\[01;31m[KImportant.txt[m[K
+2019-06-27 13:14:13 UTC+0000 2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   Users\SlimShady\Desktop\[01;31m[KImportant.txt[m[K
+
+$OBJECT_ID
+Object ID: 7726a550-d498-e911-9cc1-0800275e72bc
+Birth Volume ID: 80000000-b800-0000-0000-180000000100
+Birth Object ID: 99000000-1800-0000-690d-0a0d0a0d0a6e
+Birth Domain ID: 0d0a0d0a-0d0a-6374-0d0a-0d0a0d0a0d0a
+
+$DATA
+0000000000: 69 0d 0a 0d 0a 0d 0a 6e 0d 0a 0d 0a 0d 0a 63 74   i......n......ct
+0000000010: 0d 0a 0d 0a 0d 0a 0d 0a 66 7b 31 0d 0a 0d 0a 0d   ........f{1.....
+0000000020: 0a 5f 69 73 0d 0a 0d 0a 0d 0a 5f 6e 30 74 0d 0a   ._is......_n0t..
+0000000030: 0d 0a 0d 0a 0d 0a 5f 45 51 75 34 6c 0d 0a 0d 0a   ......_EQu4l....
+0000000040: 0d 0a 0d 0a 5f 37 6f 5f 32 5f 62 55 74 0d 0a 0d   ...._7o_2_bUt...
+0000000050: 0a 0d 0a 0d 0a 0d 0a 0d 0a 0d 0a 5f 74 68 31 73   ..........._th1s
+0000000060: 5f 64 30 73 33 6e 74 0d 0a 0d 0a 0d 0a 0d 0a 5f   _d0s3nt........_
+0000000070: 6d 34 6b 65 0d 0a 0d 0a 0d 0a 5f 73 33 6e 0d 0a   m4ke......_s3n..
+0000000080: 0d 0a 0d 0a 0d 0a 73 33 7d 0d 0a 0d 0a 47 6f 6f   ......s3}....Goo
+0000000090: 64 20 77 6f 72 6b 20 3a 50                        d.work.:P
+
+***************************************************************************
+***************************************************************************
+MFT entry found at offset 0x3bddf000
+Attribute: In Use & File
+Record Number: 26336
+Link count: 2
+
+
+$STANDARD_INFORMATION
+Creation                       Modified                       MFT Altered                    Access Date                    Type
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ----
+2010-11-21 03:24:24 UTC+0000 2010-11-21 03:24:24 UTC+0000   2019-06-25 04:07:32 UTC+0000   2010-11-21 03:24:24 UTC+0000   Archive
+
+$FILE_NAME
+Creation                       Modified                       MFT Altered                    Access Date                    Name/Path
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------
+2019-06-25 04:07:32 UTC+0000 2019-06-25 04:07:32 UTC+0000   2019-06-25 04:07:32 UTC+0000   2019-06-25 04:07:32 UTC+0000   Windows\System32\tsbyuv.dll
+
+$FILE_NAME
+Creation                       Modified                       MFT Altered                    Access Date                    Name/Path
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hsed -n '164430,164460p' notes/mftparser.txt[43D[36ms[36me[36md[39m [32m-[32mn[39m [33m'[33m1[33m6[33m4[33m4[33m3[33m0[33m,[33m1[33m6[33m4[33m4[33m6[33m0[33mp[33m'[39m [1mn[1mo[1mt[1me[1ms[1m/[1mm[1mf[1mt[1mp[1ma[1mr[1ms[1me[1mr[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+Object ID: 40000000-0000-0000-00c0-020000000000
+Birth Volume ID: 00c00200-0000-0000-00c0-020000000000
+Birth Object ID: 312c63a3-0000-ffff-ffff-ffff82794711
+Birth Domain ID: 00000000-0000-0000-0000-000000000000
+
+***************************************************************************
+***************************************************************************
+MFT entry found at offset 0x3bd8ac00
+Attribute: In Use & File
+Record Number: 60583
+Link count: 2
+
+
+$STANDARD_INFORMATION
+Creation                       Modified                       MFT Altered                    Access Date                    Type
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ----
+2019-06-27 13:14:13 UTC+0000 2019-06-27 13:26:12 UTC+0000   2019-06-27 13:26:12 UTC+0000   2019-06-27 13:14:13 UTC+0000   Archive
+
+$FILE_NAME
+Creation                       Modified                       MFT Altered                    Access Date                    Name/Path
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------
+2019-06-27 13:14:13 UTC+0000 2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   Users\SlimShady\Desktop\IMPORT~1.TXT
+
+$FILE_NAME
+Creation                       Modified                       MFT Altered                    Access Date                    Name/Path
+------------------------------ ------------------------------ ------------------------------ ------------------------------ ---------
+2019-06-27 13:14:13 UTC+0000 2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   2019-06-27 13:14:13 UTC+0000   Users\SlimShady\Desktop\Important.txt
+
+$OBJECT_ID
+Object ID: 7726a550-d498-e911-9cc1-0800275e72bc
+Birth Volume ID: 80000000-b800-0000-0000-180000000100
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hgrep -i -A 40 "Important.txt" notes/mftparser.txt | sed -n '/\$DATA/,/^\*\*\*/p' | grep -E "^[0-9a-f]{10}:" \
+ | awk '{for(i=2;i<=17;i++) if($i ~ /^[0-9a-f][0-9a-f]$/) printf "%s", $i}' | xxd -r -p | tr -d '\r\n\0' ; echo[K[A[90D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [32m-[32mA[39m[4C[33m"[33mI[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m.[33mt[33mx[33mt[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mm[1mf[1mt[1mp[1ma[1mr[1ms[1me[1mr[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36ms[36me[36md[39m [32m-[32mn[39m [33m'[33m/[33m\[33m$[33mD[33mA[33mT[33mA[33m/[33m,[33m/[33m^[33m\[33m*[33m\[33m*[33m\[33m*[33m/[33mp[33m'[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mE[39m [33m"[33m^[1m[34m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[34m][0m[39m[1m[34m{[0m[39m[33m1[33m0[1m[34m}[0m[39m[33m:[33m"[39m[1B [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[34m{[0m[39m[33mf[33mo[33mr[1m[32m([0m[39m[33mi[33m=[33m2[33m;[33mi[33m<[33m=[33m1[33m7[33m;[33mi[33m+[33m+[1m[32m)[0m[39m[33m [33mi[33mf[1m[32m([0m[39m[33m$[33mi[33m [33m~[33m [33m/[33m^[1m[35m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[35m][0m[39m[1m[35m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[35m][0m[39m[33m$[33m/[1m[32m)[0m[39m[33m [33mp[33mr[33mi[33mn[33mt[33mf[33m [33m"[33m%[33ms[33m"[33m,[33m [33m$[33mi[1m[34m}[0m[39m[33m'[39m [1m[34m|[0m[39m [36mx[36mx[36md[39m [32m-[32mr[39m [32m-[32mp[39m [1m[34m|[0m[39m [36mt[36mr[39m [32m-[32md[39m [33m'[33m\[33mr[33m\[33mn[33m\[33m0[33m'[39m [1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[?1l>[?2004l
+inctf{1_is_n0t_EQu4l_7o_2_bUt_th1s_d0s3nt_m4ke_s3ns3}Good work :P
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hgrep -i -A 40 "Important.txt" notes/mftparser.txt | sed -n '/\$DATA/,/^\*\*\*/p' | grep -E "^[0-9a-f]{10}:" \
+ | awk '{for(i=2;i<=17;i++) if($i ~ /^[0-9a-f][0-9a-f]$/) printf "%s", $i}' | xxd -r -p | tr -d '\r\n\0' | grep -o "inctf{[^}]*}"[K[A[108D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [32m-[32mA[39m[4C[33m"[33mI[33mm[33mp[33mo[33mr[33mt[33ma[33mn[33mt[33m.[33mt[33mx[33mt[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mm[1mf[1mt[1mp[1ma[1mr[1ms[1me[1mr[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36ms[36me[36md[39m [32m-[32mn[39m [33m'[33m/[33m\[33m$[33mD[33mA[33mT[33mA[33m/[33m,[33m/[33m^[33m\[33m*[33m\[33m*[33m\[33m*[33m/[33mp[33m'[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mE[39m [33m"[33m^[1m[34m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[34m][0m[39m[1m[34m{[0m[39m[33m1[33m0[1m[34m}[0m[39m[33m:[33m"[39m[1B [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[34m{[0m[39m[33mf[33mo[33mr[1m[32m([0m[39m[33mi[33m=[33m2[33m;[33mi[33m<[33m=[33m1[33m7[33m;[33mi[33m+[33m+[1m[32m)[0m[39m[33m [33mi[33mf[1m[32m([0m[39m[33m$[33mi[33m [33m~[33m [33m/[33m^[1m[35m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[35m][0m[39m[1m[35m[[0m[39m[33m0[33m-[33m9[33ma[33m-[33mf[1m[35m][0m[39m[33m$[33m/[1m[32m)[0m[39m[33m [33mp[33mr[33mi[33mn[33mt[33mf[33m [33m"[33m%[33ms[33m"[33m,[33m [33m$[33mi[1m[34m}[0m[39m[33m'[39m [1m[34m|[0m[39m [36mx[36mx[36md[39m [32m-[32mr[39m [32m-[32mp[39m [1m[34m|[0m[39m [36mt[36mr[39m [32m-[32md[39m [33m'[33m\[33mr[33m\[33mn[33m\[33m0[33m'[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mo[39m [33m"[33mi[33mn[33mc[33mt[33mf[1m[31m{[0m[39m[1m[31m[[0m[39m[33m^[1m[31m}[0m[39m[1m[31m][0m[39m[33m*[1m[31m}[0m[39m[33m"[39m[?1l>[?2004l
+[01;31m[Kinctf{1_is_n0t_EQu4l_7o_2_bUt_th1s_d0s3nt_m4ke_s3ns3}[m[K
+                                                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab4]$ [7m^[[27m[200~exit~[12D[7m[4m^[7m[4m[[27m[24m[1m[31m[[0m[39m[4m2[4m0[4m0[4m~[4me[4mx[4mi[4mt[4m~[24m[?1l>[?2004l
+zsh: bad pattern: ^[[200~exit~
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab4
+[0m[27m[24m[J[ryo@02230297 Lab4]$ [K[?1h=[?2004hexit[36me[36mx[36mi[36mt[39m[?1l>[?2004l
+
+Script done on 2026-10-11 00:18:31-04:00 [COMMAND_EXIT_CODE="1"]

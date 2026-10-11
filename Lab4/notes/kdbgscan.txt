@@ -1,0 +1,54 @@
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP1x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP1x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP1x64_23418
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP0x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win2008R2SP1x64_23418
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+
+**************************************************
+Instantiating KDBG using: /home/ryo/memlabs/Lab4/MemoryDump_Lab4.raw WinXPSP2x86 (5.1.0 32bit)
+Offset (P)                    : 0x27f60a0
+KDBG owner tag check          : True
+Profile suggestion (KDBGHeader): Win7SP0x64
+PsActiveProcessHead           : 0x282cb90
+PsLoadedModuleList            : 0x284ae90
+KernelBase                    : 0xfffff80002605000
+

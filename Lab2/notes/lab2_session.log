@@ -1,0 +1,815 @@
+Script started on 2026-10-10 13:47:46-04:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="136" LINES="28"]
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2[0m[27m[24m[J[32m┌──([1m[32m[34mryo㉿kali[0m[34m[32m)-[[1m[32m[39m~/memlabs/Lab2[0m[32m]
+└─[1m[32m[34m$[0m[34m[39m [K[?1h=[?2004hPROMPT='[%n@02230297 %1~]$ '
+[K[A[11C[33m'[1m[34m[[0m[39m[33m%[33mn[33m@[33m0[33m2[33m2[33m3[33m0[33m2[33m9[33m7[33m [33m%[33m1[33m~[1m[34m][0m[39m[33m$[33m [33m'[39m[1B[K[K[A[32C[?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hIMG=MemoryDump_Lab2.raw
+date; whoami[K[A[13C[1mM[1me[1mm[1mo[1mr[1my[1mD[1mu[1mm[1mp[1m_[1mL[1ma[1mb[1m2[1m.[1mr[1ma[1mw[0m[1B[36md[36ma[36mt[36me[39m[1m[34m;[0m[39m [36mw[36mh[36mo[36ma[36mm[36mi[39m[?1l>[?2004l
+Sat Oct 10 01:48:02 PM EDT 2026
+ryo
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hmd5sum $IMG
+sha256sum $IMG[K[A[7C[36mm[36md[36m5[36ms[36mu[36mm[39m[1B[36ms[36mh[36ma[36m2[36m5[36m6[36ms[36mu[36mm[39m[5C[?1l>[?2004l
+ddb337936a75153822baed718851716b  MemoryDump_Lab2.raw
+33d76b29683b38875d7a49bf91c23c58a72d0e1772e89f1b5ce19c25eccb9809  MemoryDump_Lab2.raw
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG imageinfo
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[2B[K[K[A[1B[K[A[K[1B[K[A[A[42C[1B[K[1B[K[A[A[42C[1B[K[1B[K[A[A[42C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+INFO    : volatility.debug    : Determining profile based on KDBG search...
+          Suggested Profile(s) : Win7SP1x64, Win7SP0x64, Win2008R2SP0x64, Win2008R2SP1x64_23418, Win2008R2SP1x64, Win7SP1x64_23418
+                     AS Layer1 : WindowsAMD64PagedMemory (Kernel AS)
+                     AS Layer2 : FileAddressSpace (/home/ryo/memlabs/Lab2/MemoryDump_Lab2.raw)
+                      PAE type : No PAE
+                           DTB : 0x187000L
+                          KDBG : 0xf800027f20a0L
+          Number of Processors : 1
+     Image Type (Service Pack) : 1
+                KPCR for CPU 0 : 0xfffff800027f3d00L
+             KUSER_SHARED_DATA : 0xfffff78000000000L
+           Image date and time : 2019-12-14 10:38:46 UTC+0000
+     Image local date and time : 2019-12-14 16:08:46 +0530
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hP=Win7SP1x64
+[K
+[K[K[K[A[K[A[33C[?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG --profile=$P pslist | tee notes/pslist.txt
+[K[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[1B[K[K[A[75C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+Offset(V)          Name                    PID   PPID   Thds     Hnds   Sess  Wow64 Start                          Exit                          
+------------------ -------------------- ------ ------ ------ -------- ------ ------ ------------------------------ ------------------------------
+0xfffffa8000ca0040 System                    4      0     80      541 ------      0 2019-12-14 10:35:21 UTC+0000                                 
+0xfffffa80014976c0 smss.exe                248      4      3       37 ------      0 2019-12-14 10:35:21 UTC+0000                                 
+0xfffffa80014fdb30 csrss.exe               320    312     10      446      0      0 2019-12-14 10:35:27 UTC+0000                                 
+0xfffffa8001c40060 csrss.exe               368    360      8      237      1      0 2019-12-14 10:35:28 UTC+0000                                 
+0xfffffa8000ca8840 psxss.exe               376    248     18      786      0      0 2019-12-14 10:35:28 UTC+0000                                 
+0xfffffa8001c5a700 winlogon.exe            416    360      6      112      1      0 2019-12-14 10:35:30 UTC+0000                                 
+0xfffffa8001c5b2b0 wininit.exe             424    312      3       75      0      0 2019-12-14 10:35:30 UTC+0000                                 
+0xfffffa8001c95320 services.exe            484    424      8      206      0      0 2019-12-14 10:35:31 UTC+0000                                 
+0xfffffa8001c9d910 lsass.exe               492    424      8      546      0      0 2019-12-14 10:35:31 UTC+0000                                 
+0xfffffa8001c9e2d0 lsm.exe                 500    424     10      181      0      0 2019-12-14 10:35:31 UTC+0000                                 
+0xfffffa8001cec790 svchost.exe             588    484     12      354      0      0 2019-12-14 10:35:35 UTC+0000                                 
+0xfffffa8001d13060 VBoxService.ex          652    484     14      135      0      0 2019-12-14 10:35:36 UTC+0000                                 
+0xfffffa8001d4ab30 svchost.exe             720    484      7      275      0      0 2019-12-14 10:35:37 UTC+0000                                 
+0xfffffa8001d76320 svchost.exe             812    484     21      474      0      0 2019-12-14 10:35:38 UTC+0000                                 
+0xfffffa8001da6930 svchost.exe             852    484     20      417      0      0 2019-12-14 10:35:38 UTC+0000                                 
+0xfffffa8001dacb30 svchost.exe             876    484     39      962      0      0 2019-12-14 10:35:38 UTC+0000                                 
+0xfffffa8001df65f0 audiodg.exe             268    812      7      131      0      0 2019-12-14 10:35:41 UTC+0000                                 
+0xfffffa8001e1eb30 svchost.exe             472    484     12      301      0      0 2019-12-14 10:35:42 UTC+0000                                 
+0xfffffa8001e47740 svchost.exe            1044    484     16      361      0      0 2019-12-14 10:35:43 UTC+0000                                 
+0xfffffa8000cf9220 spoolsv.exe            1208    484     13      279      0      0 2019-12-14 10:35:47 UTC+0000                                 
+0xfffffa8001ed8b30 svchost.exe            1248    484     18      303      0      0 2019-12-14 10:35:49 UTC+0000                                 
+0xfffffa8001f4eb30 svchost.exe            1368    484     23      314      0      0 2019-12-14 10:35:51 UTC+0000                                 
+0xfffffa8001f7c060 TCPSVCS.EXE            1412    484      4       97      0      0 2019-12-14 10:35:53 UTC+0000                                 
+0xfffffa80020f2b30 taskhost.exe           1928    484      9      154      1      0 2019-12-14 10:36:04 UTC+0000                                 
+0xfffffa8002105b30 taskeng.exe            1996    876      5       79      0      0 2019-12-14 10:36:04 UTC+0000                                 
+0xfffffa800211e7c0 dwm.exe                2012    852      4       72      1      0 2019-12-14 10:36:04 UTC+0000                                 
+0xfffffa8002131340 explorer.exe           1064   2004     37      989      1      0 2019-12-14 10:36:05 UTC+0000                                 
+0xfffffa80021bb240 SearchIndexer.         1836    484     12      628      0      0 2019-12-14 10:36:11 UTC+0000                                 
+0xfffffa80021c0b30 VBoxTray.exe           1896   1064     13      138      1      0 2019-12-14 10:36:13 UTC+0000                                 
+0xfffffa80022a3b30 csrss.exe              2308   2300      9      246      2      0 2019-12-14 10:36:24 UTC+0000                                 
+0xfffffa80022a73e0 winlogon.exe           2336   2300      4      109      2      0 2019-12-14 10:36:24 UTC+0000                                 
+0xfffffa8000e76060 taskhost.exe           2604    484      9      154      2      0 2019-12-14 10:36:29 UTC+0000                                 
+0xfffffa8000e95060 dwm.exe                2652    852      3       71      2      0 2019-12-14 10:36:29 UTC+0000                                 
+0xfffffa8000e9a110 explorer.exe           2664   2632     19      632      2      0 2019-12-14 10:36:29 UTC+0000                                 
+0xfffffa8000edcb30 VBoxTray.exe           2792   2664     12      139      2      0 2019-12-14 10:36:30 UTC+0000                                 
+0xfffffa80022e5950 cmd.exe                2096   2664      1       19      2      0 2019-12-14 10:36:35 UTC+0000                                 
+0xfffffa8000e63060 conhost.exe            2068   2308      2       50      2      0 2019-12-14 10:36:35 UTC+0000                                 
+0xfffffa8002109b30 chrome.exe             2296   2664     27      658      2      0 2019-12-14 10:36:45 UTC+0000                                 
+0xfffffa8001cc7a90 chrome.exe             2304   2296      8       71      2      0 2019-12-14 10:36:45 UTC+0000                                 
+0xfffffa8000eea7a0 chrome.exe             2476   2296      2       55      2      0 2019-12-14 10:36:46 UTC+0000                                 
+0xfffffa8000ea2b30 chrome.exe             2964   2296     13      295      2      0 2019-12-14 10:36:47 UTC+0000                                 
+0xfffffa8000fae6a0 chrome.exe             2572   2296      8      177      2      0 2019-12-14 10:36:56 UTC+0000                                 
+0xfffffa800105c060 WmiPrvSE.exe           2636    588     12      293      0      0 2019-12-14 10:37:02 UTC+0000                                 
+0xfffffa800100c060 WmiApSrv.exe           2004    484      6      115      0      0 2019-12-14 10:37:05 UTC+0000                                 
+0xfffffa800230eb30 chrome.exe             1632   2296     14      219      2      0 2019-12-14 10:37:12 UTC+0000                                 
+0xfffffa800101e640 dllhost.exe            2376    588      9      250      1      0 2019-12-14 10:37:40 UTC+0000                                 
+0xfffffa800224a8c0 KeePass.exe            3008   1064     12      316      1      0 2019-12-14 10:37:56 UTC+0000                                 
+0xfffffa8002230b30 sppsvc.exe             2764    484      5      151      0      0 2019-12-14 10:38:00 UTC+0000                                 
+0xfffffa80010e5b30 svchost.exe            1076    484     17      337      0      0 2019-12-14 10:38:02 UTC+0000                                 
+0xfffffa80010f44a0 wmpnetwk.exe            928    484     18      523      0      0 2019-12-14 10:38:03 UTC+0000                                 
+0xfffffa80011956a0 notepad.exe            3260   3180      1       61      1      0 2019-12-14 10:38:20 UTC+0000                                 
+0xfffffa80011aa060 DumpIt.exe             3844   1064      2       45      1      1 2019-12-14 10:38:43 UTC+0000                                 
+0xfffffa8001194570 conhost.exe            3852    368      2       52      1      0 2019-12-14 10:38:43 UTC+0000                                 
+0xfffffa8001189b30 WmiPrvSE.exe           4004    588      9  1572864 ------      0 2019-12-14 10:39:00 UTC+0000                                 
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG --profile=$P pstree | tee notes/pstree.txt
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m|[0m[39m [36mt[36me[36me[39m[2B[K[K[A[K[A[75C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+Name                                                  Pid   PPid   Thds   Hnds Time
+-------------------------------------------------- ------ ------ ------ ------ ----
+ 0xfffffa8000e9a110:explorer.exe                     2664   2632     19    632 2019-12-14 10:36:29 UTC+0000
+. 0xfffffa8000edcb30:VBoxTray.exe                    2792   2664     12    139 2019-12-14 10:36:30 UTC+0000
+. 0xfffffa80022e5950:cmd.exe                         2096   2664      1     19 2019-12-14 10:36:35 UTC+0000
+. 0xfffffa8002109b30:chrome.exe                      2296   2664     27    658 2019-12-14 10:36:45 UTC+0000
+.. 0xfffffa8001cc7a90:chrome.exe                     2304   2296      8     71 2019-12-14 10:36:45 UTC+0000
+.. 0xfffffa8000ea2b30:chrome.exe                     2964   2296     13    295 2019-12-14 10:36:47 UTC+0000
+.. 0xfffffa8000fae6a0:chrome.exe                     2572   2296      8    177 2019-12-14 10:36:56 UTC+0000
+.. 0xfffffa800230eb30:chrome.exe                     1632   2296     14    219 2019-12-14 10:37:12 UTC+0000
+.. 0xfffffa8000eea7a0:chrome.exe                     2476   2296      2     55 2019-12-14 10:36:46 UTC+0000
+ 0xfffffa8001c5b2b0:wininit.exe                       424    312      3     75 2019-12-14 10:35:30 UTC+0000
+. 0xfffffa8001c95320:services.exe                     484    424      8    206 2019-12-14 10:35:31 UTC+0000
+.. 0xfffffa80020f2b30:taskhost.exe                   1928    484      9    154 2019-12-14 10:36:04 UTC+0000
+.. 0xfffffa8001dacb30:svchost.exe                     876    484     39    962 2019-12-14 10:35:38 UTC+0000
+... 0xfffffa8002105b30:taskeng.exe                   1996    876      5     79 2019-12-14 10:36:04 UTC+0000
+.. 0xfffffa8001d13060:VBoxService.ex                  652    484     14    135 2019-12-14 10:35:36 UTC+0000
+.. 0xfffffa8001e1eb30:svchost.exe                     472    484     12    301 2019-12-14 10:35:42 UTC+0000
+.. 0xfffffa8001e47740:svchost.exe                    1044    484     16    361 2019-12-14 10:35:43 UTC+0000
+.. 0xfffffa8001f7c060:TCPSVCS.EXE                    1412    484      4     97 2019-12-14 10:35:53 UTC+0000
+.. 0xfffffa800100c060:WmiApSrv.exe                   2004    484      6    115 2019-12-14 10:37:05 UTC+0000
+... 0xfffffa8002131340:explorer.exe                  1064   2004     37    989 2019-12-14 10:36:05 UTC+0000
+.... 0xfffffa800224a8c0:KeePass.exe                  3008   1064     12    316 2019-12-14 10:37:56 UTC+0000
+.... 0xfffffa80021c0b30:VBoxTray.exe                 1896   1064     13    138 2019-12-14 10:36:13 UTC+0000
+.... 0xfffffa80011aa060:DumpIt.exe                   3844   1064      2     45 2019-12-14 10:38:43 UTC+0000
+.. 0xfffffa8001d76320:svchost.exe                     812    484     21    474 2019-12-14 10:35:38 UTC+0000
+... 0xfffffa8001df65f0:audiodg.exe                    268    812      7    131 2019-12-14 10:35:41 UTC+0000
+.. 0xfffffa80010e5b30:svchost.exe                    1076    484     17    337 2019-12-14 10:38:02 UTC+0000
+.. 0xfffffa8000cf9220:spoolsv.exe                    1208    484     13    279 2019-12-14 10:35:47 UTC+0000
+.. 0xfffffa8002230b30:sppsvc.exe                     2764    484      5    151 2019-12-14 10:38:00 UTC+0000
+.. 0xfffffa8001cec790:svchost.exe                     588    484     12    354 2019-12-14 10:35:35 UTC+0000
+... 0xfffffa8001189b30:WmiPrvSE.exe                  4004    588      9 15...4 2019-12-14 10:39:00 UTC+0000
+... 0xfffffa800105c060:WmiPrvSE.exe                  2636    588     12    293 2019-12-14 10:37:02 UTC+0000
+... 0xfffffa800101e640:dllhost.exe                   2376    588      9    250 2019-12-14 10:37:40 UTC+0000
+.. 0xfffffa8001d4ab30:svchost.exe                     720    484      7    275 2019-12-14 10:35:37 UTC+0000
+.. 0xfffffa8001da6930:svchost.exe                     852    484     20    417 2019-12-14 10:35:38 UTC+0000
+... 0xfffffa8000e95060:dwm.exe                       2652    852      3     71 2019-12-14 10:36:29 UTC+0000
+... 0xfffffa800211e7c0:dwm.exe                       2012    852      4     72 2019-12-14 10:36:04 UTC+0000
+.. 0xfffffa8001f4eb30:svchost.exe                    1368    484     23    314 2019-12-14 10:35:51 UTC+0000
+.. 0xfffffa8001ed8b30:svchost.exe                    1248    484     18    303 2019-12-14 10:35:49 UTC+0000
+.. 0xfffffa80010f44a0:wmpnetwk.exe                    928    484     18    523 2019-12-14 10:38:03 UTC+0000
+.. 0xfffffa80021bb240:SearchIndexer.                 1836    484     12    628 2019-12-14 10:36:11 UTC+0000
+.. 0xfffffa8000e76060:taskhost.exe                   2604    484      9    154 2019-12-14 10:36:29 UTC+0000
+. 0xfffffa8001c9d910:lsass.exe                        492    424      8    546 2019-12-14 10:35:31 UTC+0000
+. 0xfffffa8001c9e2d0:lsm.exe                          500    424     10    181 2019-12-14 10:35:31 UTC+0000
+ 0xfffffa80014fdb30:csrss.exe                         320    312     10    446 2019-12-14 10:35:27 UTC+0000
+ 0xfffffa8000ca0040:System                              4      0     80    541 2019-12-14 10:35:21 UTC+0000
+. 0xfffffa80014976c0:smss.exe                         248      4      3     37 2019-12-14 10:35:21 UTC+0000
+.. 0xfffffa8000ca8840:psxss.exe                       376    248     18    786 2019-12-14 10:35:28 UTC+0000
+ 0xfffffa8001c5a700:winlogon.exe                      416    360      6    112 2019-12-14 10:35:30 UTC+0000
+ 0xfffffa8001c40060:csrss.exe                         368    360      8    237 2019-12-14 10:35:28 UTC+0000
+. 0xfffffa8001194570:conhost.exe                     3852    368      2     52 2019-12-14 10:38:43 UTC+0000
+ 0xfffffa80011956a0:notepad.exe                      3260   3180      1     61 2019-12-14 10:38:20 UTC+0000
+ 0xfffffa80022a73e0:winlogon.exe                     2336   2300      4    109 2019-12-14 10:36:24 UTC+0000
+ 0xfffffa80022a3b30:csrss.exe                        2308   2300      9    246 2019-12-14 10:36:24 UTC+0000
+. 0xfffffa8000e63060:conhost.exe                     2068   2308      2     50 2019-12-14 10:36:35 UTC+0000
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ grep -iE "chrome|keepass" notes/pslist.txt
+[K
+[K[A[A[21C[36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33mc[33mh[33mr[33mo[33mm[33me[33m|[33mk[33me[33me[33mp[33ma[33ms[33ms[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mp[1ms[1ml[1mi[1ms[1mt[1m.[1mt[1mx[1mt[0m[2B[K[K[A[K[A[63C[?1l>[?2004l[1B0xfffffa8002109b30 [01;31m[Kchrome[m[K.exe             2296   2664     27      658      2      0 2019-12-14 10:36:45 UTC+0000                                 
+0xfffffa8001cc7a90 [01;31m[Kchrome[m[K.exe             2304   2296      8       71      2      0 2019-12-14 10:36:45 UTC+0000                                 
+0xfffffa8000eea7a0 [01;31m[Kchrome[m[K.exe             2476   2296      2       55      2      0 2019-12-14 10:36:46 UTC+0000                                 
+0xfffffa8000ea2b30 [01;31m[Kchrome[m[K.exe             2964   2296     13      295      2      0 2019-12-14 10:36:47 UTC+0000                                 
+0xfffffa8000fae6a0 [01;31m[Kchrome[m[K.exe             2572   2296      8      177      2      0 2019-12-14 10:36:56 UTC+0000                                 
+0xfffffa800230eb30 [01;31m[Kchrome[m[K.exe             1632   2296     14      219      2      0 2019-12-14 10:37:12 UTC+0000                                 
+0xfffffa800224a8c0 [01;31m[KKeePass[m[K.exe            3008   1064     12      316      1      0 2019-12-14 10:37:56 UTC+0000                                 
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG --profile=$P envars > notes/envars.txt
+[K[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[8C[1m[34m>[0m[39m[1B[K[K[A[71C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hwc -l notes/envars.txt
+[K
+[K[A[A[21C[36mw[36mc[39m [32m-[32ml[39m [1mn[1mo[1mt[1me[1ms[1m/[1me[1mn[1mv[1ma[1mr[1ms[1m.[1mt[1mx[1mt[0m[2B[K[K[A[K[A[43C[?1l>[?2004l[1B1704 notes/envars.txt
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hawk '{print $4}' notes/envars.txt | sort | uniq -c | sort -n[60D[36ma[36mw[36mk[39m [33m'[1m[34m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m4[1m[34m}[0m[39m[33m'[39m [1mn[1mo[1mt[1me[1ms[1m/[1me[1mn[1mv[1ma[1mr[1ms[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36ms[36mo[36mr[36mt[39m [1m[34m|[0m[39m [36mu[36mn[36mi[36mq[39m [32m-[32mc[39m [1m[34m|[0m[39m [36ms[36mo[36mr[36mt[39m [32m-[32mn[39m[?1l>[?2004l
+      1 ------------------------------
+      1 MpConfig_ProductAppDataPath
+      1 MpConfig_ProductCodeName
+      1 MpConfig_ProductPath
+      1 MpConfig_Produ...erAppDataPath
+      1 MpConfig_ReportingGUID
+      1 OANOCACHE
+      1 PROMPT
+      1 Variable
+      3 CHROME_RESTART
+      5 CHROME_CRASHPAD_PIPE_NAME
+     14 SESSIONNAME
+     19 HOMEDRIVE
+     19 HOMEPATH
+     19 LOGONSERVER
+     38 APPDATA
+     38 LOCALAPPDATA
+     38 USERDOMAIN
+     44 ALLUSERSPROFILE
+     44 COMPUTERNAME
+     44 ProgramData
+     44 PUBLIC
+     44 USERPROFILE
+     46 CommonProgramFiles
+     46 CommonProgramFiles(x86)
+     46 CommonProgramW6432
+     46 ProgramFiles
+     46 ProgramFiles(x86)
+     46 ProgramW6432
+     50 ComSpec
+     50 FP_NO_HOST_CHECK
+     50 NEW_TMP
+     50 NUMBER_OF_PROCESSORS
+     50 OS
+     50 PATHEXT
+     50 PROCESSOR_ARCHITECTURE
+     50 PROCESSOR_IDENTIFIER
+     50 PROCESSOR_LEVEL
+     50 PROCESSOR_REVISION
+     50 PSModulePath
+     50 TEMP
+     50 TMP
+     50 USERNAME
+     50 windir
+     50 windows_tracing_flags
+     50 windows_tracing_logfile
+     52 Path
+     52 SystemDrive
+     52 SystemRoot
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hgrep -i "NEW_TMP" notes/envars.txt | head -5[44D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mN[33mE[33mW[33m_[33mT[33mM[33mP[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1me[1mn[1mv[1ma[1mr[1ms[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m5[39m[?1l>[?2004l
+     320 csrss.exe            0x0000000000481320 NEW_TMP                        C:\Windows\ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9
+     368 csrss.exe            0x0000000000371320 NEW_TMP                        C:\Windows\ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9
+     376 psxss.exe            0x0000000000311320 NEW_TMP                        C:\Windows\ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9
+     416 winlogon.exe         0x000000000028d890 NEW_TMP                        C:\Windows\ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9
+     424 wininit.exe          0x000000000030a600 NEW_TMP                        C:\Windows\ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hecho 'ZmxhZ3t3M2xjMG0zX1QwXyRUNGczXyFfT2ZfTDRCXzJ9' | base64 -d ; echo[70D[36me[36mc[36mh[36mo[39m [33m'[33mZ[33mm[33mx[33mh[33mZ[33m3[33mt[33m3[33mM[33m2[33mx[33mj[33mM[33mG[33m0[33mz[33mX[33m1[33mQ[33mw[33mX[33my[33mR[33mU[33mN[33mG[33mc[33mz[33mX[33my[33mF[33mf[33mT[33m2[33mZ[33mf[33mT[33mD[33mR[33mC[33mX[33mz[33mJ[33m9[33m'[39m [1m[34m|[0m[39m [36mb[36ma[36ms[36me[36m6[36m4[39m [32m-[32md[39m [1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[?1l>[?2004l
+flag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ vol -f $IMG --profile=$P filescan > notes/filescan.txt
+grep -i "\.kdbx" notes/filescan.txt[K[A[14D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[10C[1m[34m>[0m[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33m\[33m.[33mk[33md[33mb[33mx[33m"[39m[19C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+0x000000003fb112a0     16      0 R--r-- \Device\HarddiskVolume2\Users\SmartNet\Secrets\Hidden[01;31m[K.kdbx[m[K
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h\Device\HarddiskVolume2\Users\SmartNet\Secrets\Hidden.kdbx[58D[4m\[4mD[4me[4mv[4mi[4mc[4me[4m\[4mH[4ma[4mr[4md[4md[4mi[4ms[4mk[4mV[4mo[4ml[4mu[4mm[4me[4m2[4m\[4mU[4ms[4me[4mr[4ms[4m\[4mS[4mm[4ma[4mr[4mt[4mN[4me[4mt[4m\[4mS[4me[4mc[4mr[4me[4mt[4ms[4m\[4mH[4mi[4md[4md[4me[4mn[4m.[4mk[4md[4mb[4mx[24m[4mb[24m[24m [4md[24m[24m [4mk[24m[24m [4m.[24m[24m [4mn[24m[24m [4me[24m[24m [4md[24m[24m [4md[24m[24m [4mi[24m[24m [4mH[24m[24m [4m\[24m[24m [4ms[24m[24m [4mt[24m[24m [4me[24m[24m [4mr[24m[24m [4mc[24m[24m [4me[24m[24m [4mS[24m[24m [4m\[24m[24m [4mt[24m[24m [4me[24m[24m [4mN[24m[24m [4mt[24m[24m [4mr[24m[24m [4ma[24m[24m [4mm[24m[24m [4mS[24m[24m [4m\[24m[24m [4ms[24m[24m [4mr[24m[24m [4me[24m[24m [4ms[24m[24m [4mU[24m[24m [4m\[24m[24m [4m2[24m[24m [4me[24m[24m [4mm[24m[24m [4mu[24m[24m [4ml[24m[24m [4mo[24m[24m [4mV[24m[24m [4mk[24m[24m [4ms[24m[24m [4mi[24m[24m [4md[24m[24m [4md[24m[24m [4mr[24m[24m [4ma[24m[24m [4mH[24m[24m [4m\[24m[24m [8D[24m\[24mD[24me[24mv[24mi[24mc[24me[24m\ [4m\[4mD[4me[4mv[4mi[4mc[4me[24m[4mc[24m[24m [4mi[24m[24m [4mv[24m[24m [4me[24m[24m [4m\[4mD[24m[24m [4m\[24m[24m [24m grep -i "Secrets" notes/filescan.txt[36D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mS[33me[33mc[33mr[33me[33mt[33ms[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+0x000000003fab03b0      1      1 R--rw- \Device\HarddiskVolume2\Users\SmartNet\[01;31m[KSecrets[m[K
+0x000000003fb112a0     16      0 R--r-- \Device\HarddiskVolume2\Users\SmartNet\[01;31m[KSecrets[m[K\Hidden.kdbx
+0x000000003fb983c0      1      1 R--rw- \Device\HarddiskVolume2\Users\SmartNet\[01;31m[KSecrets[m[K
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hgrep -i "password" notes/filescan.txt[37D[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mp[33ma[33ms[33ms[33mw[33mo[33mr[33md[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+0x000000003e868370     16      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.exe.config
+0x000000003e873070      8      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.exe
+0x000000003e8ef2d0     13      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.exe
+0x000000003e8f0360      4      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.XmlSerializers.dll
+0x000000003eaf7880     15      1 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.XmlSerializers.dll
+0x000000003fb0abc0     10      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePassLibC64.dll
+0x000000003fce1c70      1      0 R--r-d \Device\HarddiskVolume2\Users\Alissa Simpson\Pictures\[01;31m[KPassword[m[K.png
+0x000000003fd62f20      2      0 R--r-- \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\KeePass.config.xml
+0x000000003fecf820     15      0 R--r-d \Device\HarddiskVolume2\Program Files (x86)\KeePass [01;31m[KPassword[m[K Safe 2\unins000.exe
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG --profile=$P dumpfiles -Q 0x000000003fb112a0 -D dump/[65D[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[20C[32m-[32mD[39m [1md[1mu[1mm[1mp[1m/[0m[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3fb112a0   None   \Device\HarddiskVolume2\Users\SmartNet\Secrets\Hidden.kdbx
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hOFF=$(grep -i "password.png" notes/filescan.txt | head -1 | awk '{print $1}'); echo $OFF
+vol -f $IMG --profile=$P dumpfiles -Q $OFF -D dump/[K[A[26D[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mp[33ma[33ms[33ms[33mw[33mo[33mr[33md[33m.[33mp[33mn[33mg[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[6C[32m-[32mD[39m [1md[1mu[1mm[1mp[1m/[0m[?1l>[?2004l
+0x000000003fce1c70
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3fce1c70   None   \Device\HarddiskVolume2\Users\Alissa Simpson\Pictures\Password.png
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hOFF=$(grep -i "password.png" notes/filescan.txt | head -1 | awk '{print $1}'); echo $OFF
+vol -f $IMG --profile=$P dumpfiles -Q $OFF -D dump/[K
+ls -la dump/[K
+file dump/*[K
+[K[4A[25C[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mp[33ma[33ms[33ms[33mw[33mo[33mr[33md[33m.[33mp[33mn[33mg[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[6C[32m-[32mD[39m [1md[1mu[1mm[1mp[1m/[0m[1B[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[0m[1B[36mf[36mi[36ml[36me[39m[6C[1m[34m*[0m[39m[1B[K[?1l>[?2004l
+0x000000003fce1c70
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3fce1c70   None   \Device\HarddiskVolume2\Users\Alissa Simpson\Pictures\Password.png
+total 168
+drwxrwxr-x 2 ryo ryo   4096 Oct 10 14:06 [0m[01;34m.[0m
+drwxrwxr-x 5 ryo ryo   4096 Oct 10 13:39 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 159744 Oct 10 14:06 file.None.0xfffffa8000d06e10.dat
+-rw-rw-r-- 1 ryo ryo   4096 Oct 10 14:05 file.None.0xfffffa8001593ba0.dat
+dump/file.None.0xfffffa8000d06e10.dat: PNG image data, 1587 x 2245, 8-bit/color RGBA, non-interlaced
+dump/file.None.0xfffffa8001593ba0.dat: Keepass password database 2.x KDBX
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hcp dump/file.None.0xfffffa8001593ba0.dat dump/Hidden.kdbx[57D[36mc[36mp[39m [1md[1mu[1mm[1mp[1m/[1mf[1mi[1ml[1me[1m.[1mN[1mo[1mn[1me[1m.[1m0[1mx[1mf[1mf[1mf[1mf[1mf[1ma[1m8[1m0[1m0[1m1[1m5[1m9[1m3[1mb[1ma[1m0[1m.[1md[1ma[1mt[0m[17C[?1l>[?2004l
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hcp dump/file.None.0xfffffa8000d06e10.dat dump/Password.png[58D[36mc[36mp[39m [1md[1mu[1mm[1mp[1m/[1mf[1mi[1ml[1me[1m.[1mN[1mo[1mn[1me[1m.[1m0[1mx[1mf[1mf[1mf[1mf[1mf[1ma[1m8[1m0[1m0[1m0[1md[1m0[1m6[1me[1m1[1m0[1m.[1md[1ma[1mt[0m[18C[?1l>[?2004l
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hfile dump/Hidden.kdbx dump/Password.png[39D[36mf[36mi[36ml[36me[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [1md[1mu[1mm[1mp[1m/[1mP[1ma[1ms[1ms[1mw[1mo[1mr[1md[1m.[1mp[1mn[1mg[0m[?1l>[?2004l
+dump/Hidden.kdbx:  Keepass password database 2.x KDBX
+dump/Password.png: PNG image data, 1587 x 2245, 8-bit/color RGBA, non-interlaced
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open dump/Password.png
+[K
+[K[A[A[21C[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1md[1mu[1mm[1mp[1m/[1mP[1ma[1ms[1ms[1mw[1mo[1mr[1md[1m.[1mp[1mn[1mg[0m[2B[K[K[A[K[A[47C[?1l>[?2004l[1B                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol -f $IMG --profile=$P hashdump
+[K
+[K[A[A[21C[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[2B[K[K[A[1B[K[A[K[1B[K[A[A[54C[1B[K[1B[K[A[A[54C[1B[K[1B[K[A[A[54C[?1l>[?2004l[1BVolatility Foundation Volatility Framework 2.6
+Administrator:500:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+Guest:501:aad3b435b51404eeaad3b435b51404ee:31d6cfe0d16ae931b73c59d7e0c089c0:::
+SmartNet:1001:aad3b435b51404eeaad3b435b51404ee:4943abb39473a6f32c11301f4987e7e0:::
+HomeGroupUser$:1002:aad3b435b51404eeaad3b435b51404ee:f0fc3d257814e08fea06e63c5762ebd5:::
+Alissa Simpson:1003:aad3b435b51404eeaad3b435b51404ee:f4ff64c8baac57d22f22edc681055ba6:::
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli ls dump/Hidden.kdbx
+[K
+[K[A[A[21C[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[4C[1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m[2B[K[K[A[K[A[54C[?1l>[?2004l[1BEnter password to unlock dump/Hidden.kdbx: 
+General/
+Windows/
+Network/
+Internet/
+eMail/
+Homebanking/
+Recycle Bin/
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli ls dump/Hidden.kdbx "Recycle Bin"
+[K
+[K[A[A[21C[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[4C[1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m"[39m[2B[K[K[A[K[A[68C[?1l>[?2004l[1BEnter password to unlock dump/Hidden.kdbx: 
+Sample Entry
+Sample Entry #2
+Sabka Baap
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli show -s dump/Hidden.kdbx "Recycle Bin/ENTRY_NAME"[63D[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[6C[32m-[32ms[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m/[33mE[33mN[33mT[33mR[33mY[33m_[33mN[33mA[33mM[33mE[33m"[39m[?1l>[?2004l
+Enter password to unlock dump/Hidden.kdbx: 
+Could not find entry with path Recycle Bin/ENTRY_NAME.
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli show -s dump/Hidden.kdbx "Recycle Bin/ENTRY_NAME"[63D[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[6C[32m-[32ms[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m/[33mE[33mN[33mT[33mR[33mY[33m_[33mN[33mA[33mM[33mE[33m"[39m[?1l>[?2004l
+Enter password to unlock dump/Hidden.kdbx: 
+Could not find entry with path Recycle Bin/ENTRY_NAME.
+                                                                                                                                        ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ keepassxc-cli show -s dump/Hidden.kdbx "Recycle Bin/Sabka Baap"[63D[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[6C[32m-[32ms[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m/[33mS[33ma[33mb[33mk[33ma[33m [33mB[33ma[33ma[33mp[33m"[39m[?1l>[?2004l
+Enter password to unlock dump/Hidden.kdbx: 
+Error while reading the database: Invalid credentials were provided, please try again.
+If this reoccurs, then your database file may be corrupt.
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli show -s dump/Hidden.kdbx "Recycle Bin/Sabka Baap"[63D[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[6C[32m-[32ms[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m/[33mS[33ma[33mb[33mk[33ma[33m [33mB[33ma[33ma[33mp[33m"[39m[?1l>[?2004l
+Enter password to unlock dump/Hidden.kdbx: 
+Error while reading the database: Invalid credentials were provided, please try again.
+If this reoccurs, then your database file may be corrupt.
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hkeepassxc-cli show -s dump/Hidden.kdbx "Recycle Bin/Sabka Baap"[63D[36mk[36me[36me[36mp[36ma[36ms[36ms[36mx[36mc[36m-[36mc[36ml[36mi[39m[6C[32m-[32ms[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1md[1md[1me[1mn[1m.[1mk[1md[1mb[1mx[0m [33m"[33mR[33me[33mc[33my[33mc[33ml[33me[33m [33mB[33mi[33mn[33m/[33mS[33ma[33mb[33mk[33ma[33m [33mB[33ma[33ma[33mp[33m"[39m[?1l>[?2004l
+Enter password to unlock dump/Hidden.kdbx: 
+Title: Sabka Baap
+UserName: Flag
+Password: flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}
+URL: 
+Notes: 
+Uuid: {64e24b25-5b71-864b-ad9a-9a63790028aa}
+Tags: 
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h=[4m=[24m[24m vol --plugins=$HOME/volatility-plugins -f $IMG --profile=$P chromehistory > notes/chromehistory.txt
+wc -l notes/chromehistory.txt[K
+grep -iE "mega|drive.google|dropbox|mediafire" notes/chromehistory.txt[K[A[A[49D[36mv[36mo[36ml[39m [32m-[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m=[32m$[32mH[32mO[32mM[32mE[32m/[32mv[32mo[32ml[32ma[32mt[32mi[32ml[32mi[32mt[32my[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[15C[1m[34m>[0m[39m[1B[36mw[36mc[39m [32m-[32ml[39m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m"[33mm[33me[33mg[33ma[33m|[33md[33mr[33mi[33mv[33me[33m.[33mg[33mo[33mo[33mg[33ml[33me[33m|[33md[33mr[33mo[33mp[33mb[33mo[33mx[33m|[33mm[33me[33md[33mi[33ma[33mf[33mi[33mr[33me[33m"[39m[24C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+ERROR   : volatility.debug    : You must specify something to do (try -h)
+2 notes/chromehistory.txt
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hls ~/volatility-plugins | grep -i chrome[40D[36ml[36ms[39m [1m~[1m/[1mv[1mo[1ml[1ma[1mt[1mi[1ml[1mi[1mt[1my[1m-[1mp[1ml[1mu[1mg[1mi[1mn[1ms[0m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[7C[?1l>[?2004l
+[01;31m[Kchrome[m[Khistory.py
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol --plugins=$HOME/volatility-plugins --info | grep -i chrome[62D[36mv[36mo[36ml[39m [32m-[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m=[32m$[32mH[32mO[32mM[32mE[32m/[32mv[32mo[32ml[32ma[32mt[32mi[32ml[32mi[32mt[32my[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[39m [32m-[32m-[32mi[32mn[32mf[32mo[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[7C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+*** Failed to import volatility.plugins.[01;31m[Kchrome[m[Khistory (ImportError: No module named csv)
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hmkdir -p ~/vplugins-patched
+cp ~/volatility-plugins/chromehistory.py ~/volatility-plugins/sqlite_help.py ~/vplugins-patched/[K
+sed -i 's/^import csv/#import csv/' ~/vplugins-patched/*.py[K[A[A[38D[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[1B[36mc[36mp[39m [1m~[1m/[1mv[1mo[1ml[1ma[1mt[1mi[1ml[1mi[1mt[1my[1m-[1mp[1ml[1mu[1mg[1mi[1mn[1ms[1m/[1mc[1mh[1mr[1mo[1mm[1me[1mh[1mi[1ms[1mt[1mo[1mr[1my[1m.[1mp[1my[0m [1m~[1m/[1mv[1mo[1ml[1ma[1mt[1mi[1ml[1mi[1mt[1my[1m-[1mp[1ml[1mu[1mg[1mi[1mn[1ms[1m/[1ms[1mq[1ml[1mi[1mt[1me[1m_[1mh[1me[1ml[1mp[1m.[1mp[1my[0m[1B[36ms[36me[36md[39m [32m-[32mi[39m [33m'[33ms[33m/[33m^[33mi[33mm[33mp[33mo[33mr[33mt[33m [33mc[33ms[33mv[33m/[33m#[33mi[33mm[33mp[33mo[33mr[33mt[33m [33mc[33ms[33mv[33m/[33m'[39m[20C[1m[34m*[0m[39m[3C[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol --plugins=$HOME/vplugins-patched --info | grep -i chrome[60D[36mv[36mo[36ml[39m [32m-[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m=[32m$[32mH[32mO[32mM[32mE[32m/[32mv[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m-[32mp[32ma[32mt[32mc[32mh[32me[32md[39m [32m-[32m-[32mi[32mn[32mf[32mo[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[7C[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+*** Failed to import volatility.plugins.[01;31m[Kchrome[m[Khistory (ImportError: No module named Protocol.KDF)
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hvol --plugins=$HOME/vplugins-patched -f $IMG --profile=$P chromehistory > notes/chromehistory.txt
+grep -i "mega" notes/chromehistory.txt[K[A[17D[36mv[36mo[36ml[39m [32m-[32m-[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m=[32m$[32mH[32mO[32mM[32mE[32m/[32mv[32mp[32ml[32mu[32mg[32mi[32mn[32ms[32m-[32mp[32ma[32mt[32mc[32mh[32me[32md[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[15C[1m[34m>[0m[39m [1mn[1mo[1mt[1me[1ms[1m/[1mc[1mh[1mr[1mo[1mm[1me[1mh[1mi[1ms[1mt[1mo[1mr[1my[1m.[1mt[1mx[1mt[0m[1B[36mg[36mr[36me[36mp[39m [32m-[32mi[39m [33m"[33mm[33me[33mg[33ma[33m"[39m [1mn[1mo[1mt[1me[1ms[1m/[1mc[1mh[1mr[1mo[1mm[1me[1mh[1mi[1ms[1mt[1mo[1mr[1my[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+Volatility Foundation Volatility Framework 2.6
+ERROR   : volatility.debug    : You must specify something to do (try -h)
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hgrep -iE 'Chrome.*Default.History' notes/filescan.txt[53D[36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m'[33mC[33mh[33mr[33mo[33mm[33me[33m.[33m*[33mD[33me[33mf[33ma[33mu[33ml[33mt[33m.[33mH[33mi[33ms[33mt[33mo[33mr[33my[33m'[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m[?1l>[?2004l
+0x000000003fa3e430     17      1 RW-rw- \Device\HarddiskVolume2\Users\SmartNet\AppData\Local\Google\[01;31m[KChrome\User Data\Default\History[m[K-journal
+0x000000003fcfb1d0     18      1 RW-rw- \Device\HarddiskVolume2\Users\SmartNet\AppData\Local\Google\[01;31m[KChrome\User Data\Default\History[m[K
+0x000000003fd4a670     16      0 R--rw- \Device\HarddiskVolume2\Users\SmartNet\AppData\Local\Google\[01;31m[KChrome\User Data\Default\History[m[K-journal
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hOFF=$(grep -iE 'Chrome.*Default.History$' notes/filescan.txt | head -1 | awk '{print $1}'); echo $OFF
+vol -f $IMG --profile=$P dumpfiles -Q $OFF -D dump/[K
+ls -lt dump/ | head -5[K[A[A[3C[1m[35m$[1m[34m([0m[39m[36mg[36mr[36me[36mp[39m [32m-[32mi[32mE[39m [33m'[33mC[33mh[33mr[33mo[33mm[33me[33m.[33m*[33mD[33me[33mf[33ma[33mu[33ml[33mt[33m.[33mH[33mi[33ms[33mt[33mo[33mr[33my[33m$[33m'[39m [1mn[1mo[1mt[1me[1ms[1m/[1mf[1mi[1ml[1me[1ms[1mc[1ma[1mn[1m.[1mt[1mx[1mt[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m1[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[1B[36mv[36mo[36ml[39m [32m-[32mf[39m[6C[32m-[32m-[32mp[32mr[32mo[32mf[32mi[32ml[32me[32m=[32m$[32mP[39m[11C[32m-[32mQ[39m[6C[32m-[32mD[39m [1md[1mu[1mm[1mp[1m/[0m[1B[36ml[36ms[39m [32m-[32ml[32mt[39m [1md[1mu[1mm[1mp[1m/[0m [1m[34m|[0m[39m [36mh[36me[36ma[36md[39m [32m-[32m5[39m[?1l>[?2004l
+0x000000003fcfb1d0
+Volatility Foundation Volatility Framework 2.6
+DataSectionObject 0x3fcfb1d0   None   \Device\HarddiskVolume2\Users\SmartNet\AppData\Local\Google\Chrome\User Data\Default\History
+SharedCacheMap 0x3fcfb1d0   None   \Device\HarddiskVolume2\Users\SmartNet\AppData\Local\Google\Chrome\User Data\Default\History
+total 436
+-rw-rw-r-- 1 ryo ryo 118784 Oct 10 14:25 file.None.0xfffffa8000efd1d0.dat
+-rw-rw-r-- 1 ryo ryo      0 Oct 10 14:25 file.None.0xfffffa8000efde00.vacb
+-rw-rw-r-- 1 ryo ryo 159744 Oct 10 14:08 Password.png
+-rw-rw-r-- 1 ryo ryo   4096 Oct 10 14:08 Hidden.kdbx
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hcp dump/file.None.0xNEWEST.dat dump/History
+file dump/History[K
+sqlite3 dump/History "SELECT url, title FROM urls;" | grep -i mega[K[A[A[45D[36mc[36mp[39m[1B[36mf[36mi[36ml[36me[39m[1B[36ms[36mq[36ml[36mi[36mt[36me[36m3[39m[14C[33m"[33mS[33mE[33mL[33mE[33mC[33mT[33m [33mu[33mr[33ml[33m,[33m [33mt[33mi[33mt[33ml[33me[33m [33mF[33mR[33mO[33mM[33m [33mu[33mr[33ml[33ms[33m;[33m"[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[5C[?1l>[?2004l
+cp: cannot stat 'dump/file.None.0xNEWEST.dat': No such file or directory
+dump/History: cannot open `dump/History' (No such file or directory)
+Parse error in 2nd command line argument: no such table: urls
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ [0m[27m[24m[J[ryo@02230297 Lab2]$ cp dump/file.None.0xfffffa8000efd1d0.dat dump/History
+file dump/History[K
+sqlite3 dump/History "SELECT url, title FROM urls;" | grep -i mega[K[A[A[45D[36mc[36mp[39m [1md[1mu[1mm[1mp[1m/[1mf[1mi[1ml[1me[1m.[1mN[1mo[1mn[1me[1m.[1m0[1mx[1mf[1mf[1mf[1mf[1mf[1ma[1m8[1m0[1m0[1m0[1me[1mf[1md[1m1[1md[1m0[1m.[1md[1ma[1mt[0m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m[1B[36mf[36mi[36ml[36me[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m[1B[36ms[36mq[36ml[36mi[36mt[36me[36m3[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m [33m"[33mS[33mE[33mL[33mE[33mC[33mT[33m [33mu[33mr[33ml[33m,[33m [33mt[33mi[33mt[33ml[33me[33m [33mF[33mR[33mO[33mM[33m [33mu[33mr[33ml[33ms[33m;[33m"[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[5C[?1l>[?2004l
+dump/History: SQLite 3.x database, last written using SQLite version 3030001, file counter 7, database pages 29, cookie 0x2f, schema 4, UTF-8, version-valid-for 7
+https://[01;31m[Kmega[m[K.nz/#F!TrgSQQTS!H0ZrUzF0B-ZKNM3y9E76lg|[01;31m[KMEGA[m[K
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hcp dump/file.None.0xfffffa8000efd1d0.dat dump/History
+file dump/History[K
+sqlite3 dump/History "SELECT url, title FROM urls;"[K[A[A[30D[36mc[36mp[39m [1md[1mu[1mm[1mp[1m/[1mf[1mi[1ml[1me[1m.[1mN[1mo[1mn[1me[1m.[1m0[1mx[1mf[1mf[1mf[1mf[1mf[1ma[1m8[1m0[1m0[1m0[1me[1mf[1md[1m1[1md[1m0[1m.[1md[1ma[1mt[0m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m[1B[36mf[36mi[36ml[36me[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m[1B[36ms[36mq[36ml[36mi[36mt[36me[36m3[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m [33m"[33mS[33mE[33mL[33mE[33mC[33mT[33m [33mu[33mr[33ml[33m,[33m [33mt[33mi[33mt[33ml[33me[33m [33mF[33mR[33mO[33mM[33m [33mu[33mr[33ml[33ms[33m;[33m"[39m[38;5;244m | grep -i mega[39m[15D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [15D[?1l>[?2004l
+dump/History: SQLite 3.x database, last written using SQLite version 3030001, file counter 7, database pages 29, cookie 0x2f, schema 4, UTF-8, version-valid-for 7
+╭────────────────────────────────────────────────────────────────────┬───────────────────────────────────────────────────────────────────────────────────────╮
+│                                url                                 │                                         title                                         │
+╞════════════════════════════════════════════════════════════════════╪═══════════════════════════════════════════════════════════════════════════════════════╡
+│https://chrome.google.com/webstore?hl=en                            │Chrome Web Store - Extensions                                                          │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://chrome.google.com/webstore/category/extensions?hl=en        │Chrome Web Store - Extensions                                                          │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.google.com/                                             │Google                                                                                 │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://bing.com/                                                    │Bing                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://bing.com/                                                   │Bing                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.bing.com/?toWww=1&redig=2BBD701F84AA44D2A71D870534D085AE│Bing                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.facebook.com/                                           │Facebook – log in or sign up                                                           │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://volatilevirus.home.blog/                                     │Abhiram's Blog – Dying Is The Day Worth Living For!!                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://volatilevirus.home.blog/                                    │Abhiram's Blog – Dying Is The Day Worth Living For!!                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://r3xnation.wordpress.com/                                     │R3xNation – Free Flowing passions                                                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://r3xnation.wordpress.com/                                    │R3xNation – Free Flowing passions                                                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://ashutosh1206.github.io/                                      │Home | Ashutosh                                                                        │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://ashutosh1206.github.io/                                     │Home | Ashutosh                                                                        │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.onlinesbi.com/                                          │State Bank of India                                                                    │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.india.com/                                              │Latest India News, Breaking News, Entertainment News | India.com News                  │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://ashutosh1206.github.io/writeups/                            │Writeups | Ashutosh                                                                    │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://volatilevirus.home.blog/blog-posts/                         │Blog Posts – Abhiram's Blog                                                            │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://bbc.com/                                                     │BBC - Homepage                                                                         │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://bbc.com/                                                    │BBC - Homepage                                                                         │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.bbc.com/                                                │BBC - Homepage                                                                         │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.bbc.com/sport/football/50780855                         │Jurgen Klopp signs new Liverpool deal until 2024 - BBC Sport                           │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.facebook.com/common/referer_frame.php                   │                                                                                       │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://yahoo.in/                                                    │Yahoo India | News, Finance, Cricket, Lifestyle and Entertainment                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://in.yahoo.com/                                                │Yahoo India | News, Finance, Cricket, Lifestyle and Entertainment                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://in.yahoo.com/                                               │Yahoo India | News, Finance, Cricket, Lifestyle and Entertainment                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.youtube.com/                                            │YouTube                                                                                │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://r3xnation.wordpress.com/about/                              │About – R3xNation                                                                      │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://blog.bi0s.in/                                                │bi0s                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://blog.bi0s.in/                                               │bi0s                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://ndtv.com/                                                    │NDTV: Latest News, India News, Breaking News, Business, Bollywood, Cricket, Videos &   │
+│                                                                    │Photos                                                                                 │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://www.ndtv.com/                                               │NDTV: Latest News, India News, Breaking News, Business, Bollywood, Cricket, Videos &   │
+│                                                                    │Photos                                                                                 │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://mega.nz/#F!TrgSQQTS!H0ZrUzF0B-ZKNM3y9E76lg                  │MEGA                                                                                   │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│http://bi0s.in/                                                     │Amrita Bios                                                                            │
+├────────────────────────────────────────────────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────┤
+│https://bi0s.in/                                                    │Amrita Bios                                                                            │
+╰────────────────────────────────────────────────────────────────────┴───────────────────────────────────────────────────────────────────────────────────────╯
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hsqlite3 dump/History "SELECT url, title FROM urls;" | grep -i mega[66D[36ms[36mq[36ml[36mi[36mt[36me[36m3[39m [1md[1mu[1mm[1mp[1m/[1mH[1mi[1ms[1mt[1mo[1mr[1my[0m [33m"[33mS[33mE[33mL[33mE[33mC[33mT[33m [33mu[33mr[33ml[33m,[33m [33mt[33mi[33mt[33ml[33me[33m [33mF[33mR[33mO[33mM[33m [33mu[33mr[33ml[33ms[33m;[33m"[39m [1m[34m|[0m[39m [36mg[36mr[36me[36mp[39m [32m-[32mi[39m[5C[?1l>[?2004l
+https://[01;31m[Kmega[m[K.nz/#F!TrgSQQTS!H0ZrUzF0B-ZKNM3y9E76lg|[01;31m[KMEGA[m[K
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hunzip -l dump/Important.zip[27D[36mu[36mn[36mz[36mi[36mp[39m [32m-[32ml[39m[19C[?1l>[?2004l
+unzip:  cannot find or open dump/Important.zip, dump/Important.zip.zip or dump/Important.zip.ZIP.
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ [0m[27m[24m[J[ryo@02230297 Lab2]$ l[36ml[39m[36ml[36ms[39m[38;5;244m ~/volatility-plugins | grep -i chrome[39m[38D[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [38D[?1l>[?2004l
+[0m[01;34mdump[0m  [01;31mMemLabs-Lab2.7z[0m  [01;32mMemoryDump_Lab2.raw[0m  [01;34mnotes[0m  [01;34mscreenshots[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244mp dump/file.None.0xfffffa8000efd1d0.dat dump/History[39m
+[38;5;244mfile dump/History[39m[K
+[38;5;244msqlite3 dump/History "SELECT url, title FROM urls;"[39m[K[A[A[29D[4mc[39m[4md[24m[39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [39m [1B[K[1B[K[A[A[23C[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m d[1md[0m[1md[1me[0m[0md[0me [1md[0m[1md[1mu[0m[1mu[1mmp/[0m[1mp[0m[0m [?1l>[?2004l[1B                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[?1l>[?2004l
+file.None.0xfffffa8000d06e10.dat  file.None.0xfffffa8000efde00.vacb  Hidden.kdbx  [0m[01;31mImportant.zip[0m
+file.None.0xfffffa8000efd1d0.dat  file.None.0xfffffa8001593ba0.dat   History      [01;35mPassword.png[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md dump[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39m.[39m [39m [39m [1m.[0m[1m.[1m.[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hunzip -l dump/Important.zip[27D[36mu[36mn[36mz[36mi[36mp[39m [32m-[32ml[39m [1md[1mu[1mm[1mp[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m[?1l>[?2004l
+Archive:  dump/Important.zip
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+    57457  2019-12-23 04:47   Important.zip
+---------                     -------
+    57457                     1 file
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hPW=$(echo -n 'PASTE_YOUR_LAB1_FLAG3_HERE' | sha1sum | awk '{print $1}'); echo $PW[78D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m'[33mP[33mA[33mS[33mT[33mE[33m_[33mY[33mO[33mU[33mR[33m_[33mL[33mA[33mB[33m1[33m_[33mF[33mL[33mA[33mG[33m3[33m_[33mH[33mE[33mR[33mE[33m'[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[4C[66D[1m[7m[34m([0m[27m[39m[65C[65D[27m[1m[34m([0m[39m[64C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[1C[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[P[41C [42D[33mf[33ml[0m[33ma[33mg[33m{[33mw[33m3[33ml[33mc[33m0[33mm[33m3[0m[33m_[33mT[33m0[33m_[33m$[33mT[33m4[0m[33mg[33m3[33m_[33m![33m_[33mO[33mf[33m_[33mL[0m[33m4[33mB[0m[33m_[0m[33m2[33m'[39m[39m [1m[34m|[0m[39m[39m [36ms[36mh[36ma[36m1[36ms[36mum[39m [1m[34m|[0m[39m [36mawk[39m [33m'[1m[32m{[0m[39m[33mprint $1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1m[34m;[0m[39m [36mecho[39m $PW[41D[42D[1m[31m([0m[39m[13C[1m[31m{[0m[39m[46C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[31m)[0m[39m[31D[28D[0m[33m\[1m[31m{[0m[39m[33mw[33m3[33ml[33mc[33m0[33mm[33m3[33m_[33mT[33m0[33m_[33m\[39m[4P[51C    [45D
+Completing expansions[K[K
+[7mflag\{w3lc0m3_T0_\!_Of_L4B_2[0m[K
+Completing all expansions[K[K
+[0mflag\{w3lc0m3_T0_\!_Of_L4B_2[K
+Completing original[K[K
+[J[0mflag{w3lc0m3_T0_$T4g3_!_Of_L4B_2[J[6A[0m[27m[24m[0m[39m[21CPW=[1m[35m$[1m[31m([0m[39m[36mecho[39m [32m-n[39m [33m'flag\[1m[31m{[0m[39m[33mw3lc0m3_T0_\!_Of_L4B_2'[39m [1m[34m|[0m[39m [36msha1sum[39m [1m[34m|[0m[39m [36mawk[39m [33m'[1m[35m{[0m[39m[33mprint $1[1m[35m}[0m[39m[33m'[39m[1m[31m)[0m[39m[1m[34m;[0m[39m [36mecho[39m $PW[K[0m[39m[41D
+[1B[7mflag\{w3lc0m3_T0_\!_Of_L4B_2[0m[7mflag\{w3lc0m3_T0_\!_Of_L4B_2[0m[A[A[0m[27m[24m[0m[39m[21CPW=[1m[35m$[1m[31m([0m[39m[36mecho[39m [32m-n[39m [33m'flag\[1m[31m{[0m[39m[33mw3lc0m3_T0_\!_Of_L4B_2'[39m [1m[34m|[0m[39m [36msha1sum[39m [1m[34m|[0m[39m [36mawk[39m [33m'[1m[35m{[0m[39m[33mprint $1[1m[35m}[0m[39m[33m'[39m[1m[31m)[0m[39m[1m[34m;[0m[39m [36mecho[39m $PW[K[0m[39m[41D
+[J[A[63C[39D[0m[39m$[0m[39m([39me[39mc[39mh[39mo [39m-[39mn [39m'[39mf[39ml[39ma[39mg[39m\[0m[39m{[39mw[39m3[39ml[39mc[39m0[39mm[39m3[39m_[39mT[39m0[39m_[39m\[39m![39m_[39mO[39mf[39m_[39mL[39m4[39mB[39m_[39m2[39m' [0m[39m| [39ms[39mh[39ma[39m1[39ms[39mu[39mm [0m[39m| [39ma[39mw[39mk [39m'[0m[39m{[39mp[39mr[39mi[39mn[39mt[39m [39m$[39m1[0m[39m}[39m'[0m[39m)[0m[39m; [39me[39mc[39mh[39mo[36D} | sha1sum | awk '{print $1}'); echo $PW[40D[41D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m'[33mf[33ml[33ma[33mg[33m\[1m[32m{[0m[39m[33mw[33m3[33ml[33mc[33m0[33mm[33m3[33m_[33mT[33m0[33m_[33m\[33m![33m_[33mO[33mf[33m_[33mL[33m4[33mB[33m_[33m2[33m'[39m[1m[32m}[0m[24m[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[30D[P[40C [41D[39D[1m[31m([0m[39m[14C[1m[31m{[0m[39m[41C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[31m)[0m[39m[1m[34m;[0m[39m [36me[36mc[36mh[36mo[39m[36D[33m}[33m'[39m[0m[39m [1m[34m|[0m[39m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m[0m[39m [1m[34m|[0m[39m[39m [36ma[36mw[36mk[39m[39m [0m[33m'[1m[35m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[0m[33m1[1m[35m}[0m[39m[0m[33m'[39m[1m[31m)[0m[39m[1m[34m;[0m[39m[39m [36me[36mc[36mh[36mo[39m $PW[41D[39D[1m[34m([0m[39m[14C[1m[32m{[0m[39m[22C[1m[32m}[0m[39m[19C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[31D[?1l>[?2004l
+[J25761e0a2c158439ed7d17cf267ac5226f25e2f6
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hunzip -P "$PW" dump/Important.zip -d dump/
+[K
+[K[A[A[21C[36mu[36mn[36mz[36mi[36mp[39m [32m-[32mP[39m [33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m [1md[1mu[1mm[1mp[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32md[39m [1md[1mu[1mm[1mp[1m/[0m[2B[K[K[A[K[A[63C[?1l>[?2004l[1BArchive:  dump/Important.zip
+replace dump/Important.zip? [y]es, [n]o, [A]ll, [N]one, [r]ename: n
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[?1l>[?2004l
+[0m[01;34mdump[0m  [01;31mMemLabs-Lab2.7z[0m  [01;32mMemoryDump_Lab2.raw[0m  [01;34mnotes[0m  [01;34mscreenshots[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md ..[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39md[39m [1md[0m[38;5;244mump[39m[1md[39m[1mu[0m[1mu[39m[1mm[39m[1mp[1m/[0m[1mp[0m[0m [?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[?1l>[?2004l
+file.None.0xfffffa8000d06e10.dat  file.None.0xfffffa8000efde00.vacb  Hidden.kdbx  [0m[01;31mImportant.zip[0m
+file.None.0xfffffa8000efd1d0.dat  file.None.0xfffffa8001593ba0.dat   History      [01;35mPassword.png[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004h7z x -p"$PW" dump/Important.zip -odump/
+[K
+[K[A[A[21C[36m7[36mz[39m[3C[32m-[32mp[33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m[20C[32m-[32mo[32md[32mu[32mm[32mp[32m/[39m[2B[K[K[A[K[A[60C[?1l>[?2004l[1B
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         
+ERROR: errno=2 : No such file or directory
+dump
+
+
+
+System ERROR:
+errno=2 : No such file or directory
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md dump[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39m.[39m [39m [39m [1m.[0m[38;5;244m.[39m[1m.[39m[1m.[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z x -p"$PW" dump/Important.zip -odump/
+[K
+[K[A[A[21C[36m7[36mz[39m[3C[32m-[32mp[33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m [1md[1mu[1mm[1mp[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32mo[32md[32mu[32mm[32mp[32m/[39m[2B[K[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 57619 bytes (57 KiB)
+
+Extracting archive: dump/Important.zip
+--
+Path = dump/Important.zip
+Type = zip
+Physical Size = 57619
+
+  0%    
+Would you like to replace the existing file:
+  Path:     dump/Important.zip
+  Size:     57619 bytes (57 KiB)
+  Modified: 2026-10-10 14:35:38
+with the file from archive:
+  Path:     Important.zip
+  Size:     57457 bytes (57 KiB)
+  Modified: 2019-12-23 04:47:20
+? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? q
+
+
+
+Break signaled
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hmkdir -p dump/mega[18D[36mm[36mk[36md[36mi[36mr[39m [32m-[32mp[39m[10C[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z l dump/mega/Important.zip[28D[36m7[36mz[39m[26C[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         
+ERROR: errno=2 : No such file or directory
+dump/mega/Important.zip
+
+
+
+System ERROR:
+errno=2 : No such file or directory
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[?1l>[?2004l
+[0m[01;34mdump[0m  [01;31mMemLabs-Lab2.7z[0m  [01;32mMemoryDump_Lab2.raw[0m  [01;34mnotes[0m  [01;34mscreenshots[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md ..[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39md[39m [1md[0m[38;5;244mump[39m[1md[39m[1mu[0m[1mu[39m[1mm[39m[1mp[1m/[0m[1mp[0m[0m [?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hl[36ml[39m[36ml[39m[38;5;244ms[39m[36ml[36ms[39m[?1l>[?2004l
+file.None.0xfffffa8000d06e10.dat  file.None.0xfffffa8000efde00.vacb  Hidden.kdbx  [0m[01;31mImportant.zip[0m  [01;35mPassword.png[0m
+file.None.0xfffffa8000efd1d0.dat  file.None.0xfffffa8001593ba0.dat   History      [01;34mmega[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md dump[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39mm[39m [39m [39m [1mm[0m[1mm[1me[0m[1me[1mga/[0m[1ma[0m[0m [?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump/mega
+[0m[27m[24m[J[ryo@02230297 mega]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md mega[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39m.[39m [39m [39m [1m.[0m[38;5;244m.[39m[1m.[39m[1m.[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2/dump
+[0m[27m[24m[J[ryo@02230297 dump]$ [K[?1h=[?2004hc[4mc[24m[4mc[24m[38;5;244md ..[39m[4mc[39m[4md[24m[24m[36mc[24m[36md[39m[36mc[36md[36m [39m[36mc[36md[39m[39m [39m.[1m.[0m[1m.[39m[1m.[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z x dump/Important.zip -odump/mega/[36D[36m7[36mz[39m[3C[1md[1mu[1mm[1mp[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32mo[32md[32mu[32mm[32mp[32m/[32mm[32me[32mg[32ma[32m/[39m[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 57619 bytes (57 KiB)
+
+Extracting archive: dump/Important.zip
+--
+Path = dump/Important.zip
+Type = zip
+Physical Size = 57619
+
+  0%    Everything is Ok
+
+Size:       57457
+Compressed: 57619
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hls -la dump/mega/[17D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[0m[?1l>[?2004l
+total 68
+drwxrwxr-x 2 ryo ryo  4096 Oct 10 14:45 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo  4096 Oct 10 14:44 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 57457 Dec 23  2019 [01;31mImportant.zip[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hunzip -l dump/mega/Important.zip[32D[36mu[36mn[36mz[36mi[36mp[39m [32m-[32ml[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m[?1l>[?2004l
+Archive:  dump/mega/Important.zip
+Password is SHA1(stage-3-FLAG) from Lab-1. Password is in lowercase.
+  Length      Date    Time    Name
+---------  ---------- -----   ----
+    59291  2019-12-23 15:16   Important.png
+---------                     -------
+    59291                     1 file
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hecho $PW[8D[36me[36mc[36mh[36mo[39m[4C[?1l>[?2004l
+25761e0a2c158439ed7d17cf267ac5226f25e2f6
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z x -p"$PW" dump/mega/Important.zip -odump/mega/[49D[36m7[36mz[39m[3C[32m-[32mp[33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32mo[32md[32mu[32mm[32mp[32m/[32mm[32me[32mg[32ma[32m/[39m[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 57457 bytes (57 KiB)
+
+Extracting archive: dump/mega/Important.zip
+--
+Path = dump/mega/Important.zip
+Type = zip
+Physical Size = 57457
+Comment = Password is SHA1(stage-3-FLAG) from Lab-1. Password is in lowercase.
+
+  0%    ERROR: Wrong password : Important.png
+100% - Important.png                    
+Sub items Errors: 1
+
+Archives with Errors: 1
+
+Sub items Errors: 1
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hls -la dump/mega/[17D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[0m[?1l>[?2004l
+total 68
+drwxrwxr-x 2 ryo ryo  4096 Oct 10 14:46 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo  4096 Oct 10 14:44 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo     0 Dec 23  2019 [01;35mImportant.png[0m
+-rw-rw-r-- 1 ryo ryo 57457 Dec 23  2019 [01;31mImportant.zip[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open dump/mega/Important.png[32D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mp[1mn[1mg[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hecho "$LAB1FLAG"[16D[36me[36mc[36mh[36mo[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m[?1l>[?2004l
+
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{...exactly as in flag3.png...}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33m.[33m.[33m.[33me[33mx[33ma[33mc[33mt[33ml[33my[33m [33ma[33ms[33m [33mi[33mn[33m [33mf[33ml[33ma[33mg[33m3[33m.[33mp[33mn[33mg[33m.[33m.[33m.[1m[34m}[0m[39m[33m'[39m[1B[64D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[67C[30D[1m[7m[34m{[0m[27m[39m[29C[1C[31D[27m[1m[34m{[0m[39m[30C[0m[33m'[39m[39m [30D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[11C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [24D[39m'[39mf[39ml[39ma[39mg[0m[39m{[39m.[39m.[39m.[39me[39mx[39ma[39mc[39mt[39ml[39my[39m [39ma[39ms[39m [39mi[39mn[39m [39mf[39m'[1B[52D[0m[39m$[0m[39m([39me[39mc[39mh[39mo [39m-[39mn [39m"[0m[39m$[0m[39mL[0m[39mA[0m[39mB[0m[39m1[0m[39mF[0m[39mL[0m[39mA[0m[39mG[39m" [0m[39m| [39ms[39mh[39ma[39m1[39ms[39mu[39mm [0m[39m| [39ma[39mw[39mk [39m'[0m[39m{[39mp[39mr[39mi[39mn[39mt[39m [39m$[39m1[0m[39m}[39m'[0m[39m)[1B[39me[39mc[39mh[39mo[A[A[50C' [23D[33m'[33mf[33ml[33ma[33mg[1m[31m{[0m[39m[33m.[33m.[33m.[33me[33mx[33ma[33mc[33mt[33ml[33my[33m [33ma[33ms[33m [33mi[33mn[33m [33m'[39m[1B[51D[1m[35m$[1m[32m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[35m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[A[A[49C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [11D[39m'[39mf[39ml[39ma[39mg[0m[39m{[39m.[39m.[39m.[39me[39mx[39m'[1B[39D[0m[39m$[0m[39m([39me[39mc[39mh[39mo [39m-[39mn [39m"[0m[39m$[0m[39mL[0m[39mA[0m[39mB[0m[39m1[0m[39mF[0m[39mL[0m[39mA[0m[39mG[39m" [0m[39m| [39ms[39mh[39ma[39m1[39ms[39mu[39mm [0m[39m| [39ma[39mw[39mk [39m'[0m[39m{[39mp[39mr[39mi[39mn[39mt[39m [39m$[39m1[0m[39m}[39m'[0m[39m)[1B[39me[39mc[39mh[39mo[A[A[37C' [10D[33m'[33mf[33ml[33ma[33mg[1m[31m{[0m[39m[33m.[33m.[33m.[33me[33m'[39m[1B[38D[1m[35m$[1m[32m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[35m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[A[A[36C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{th1s_1s_th3_1st_st4g3!!}'[39m[25D[1m[34m{[0m[39m[23C[1m[34m}[0m[39m[?1l>[?2004l[2B
+b593ac906470b17b23f449871d9684e87231db67
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z x -p"$PW" dump/mega/Important.zip -odump/mega/[49D[36m7[36mz[39m[3C[32m-[32mp[33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32mo[32md[32mu[32mm[32mp[32m/[32mm[32me[32mg[32ma[32m/[39m[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 57457 bytes (57 KiB)
+
+Extracting archive: dump/mega/Important.zip
+--
+Path = dump/mega/Important.zip
+Type = zip
+Physical Size = 57457
+Comment = Password is SHA1(stage-3-FLAG) from Lab-1. Password is in lowercase.
+
+  0%    
+Would you like to replace the existing file:
+  Path:     dump/mega/Important.png
+  Size:     0 bytes
+  Modified: 2019-12-23 05:46:06
+with the file from archive:
+  Path:     Important.png
+  Size:     59291 bytes (58 KiB)
+  Modified: 2019-12-23 05:46:06
+? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? q
+
+
+
+Break signaled
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hls -la dump/mega/[17D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[0m[?1l>[?2004l
+total 68
+drwxrwxr-x 2 ryo ryo  4096 Oct 10 14:46 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo  4096 Oct 10 14:44 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo     0 Dec 23  2019 [01;35mImportant.png[0m
+-rw-rw-r-- 1 ryo ryo 57457 Dec 23  2019 [01;31mImportant.zip[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open dump/mega/Important.png[32D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mp[1mn[1mg[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{...copy exactly from flag3.png...}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33m.[33m.[33m.[33mc[33mo[33mp[33my[33m [33me[33mx[33ma[33mc[33mt[33ml[33my[33m [33mf[33mr[33mo[33mm[33m [33mf[33ml[33ma[33mg[33m3[33m.[33mp[33mn[33mg[33m.[33m.[33m.[1m[34m}[0m[39m[33m'[39m[1B[68D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[71C[0m[33m'[39m[39m [34D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[15C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{w311_3rd_stage_was_easy}'[39m[25D[1m[34m{[0m[39m[23C[1m[34m}[0m[39m[?1l>[?2004l[2B
+331951d605011459eed8bc0d13cd41ea2cd5e473
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{w311_3rd_stage_was_easy}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mw[33m3[33m1[33m1[33m_[33m3[33mr[33md[33m_[33ms[33mt[33ma[33mg[33me[33m_[33mw[33ma[33ms[33m_[33me[33ma[33ms[33my[1m[34m}[0m[39m[33m'[39m[1B[58D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[61C[0m[33m'[39m[39m [24D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[5C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{G00d_BoY_good_girL}'[39m[20D[1m[34m{[0m[39m[18C[1m[34m}[0m[39m[?1l>[?2004l[2B
+9b42a16a56cfd48e2c07cddd2c77e1a7f2cfae63
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{G00d_BoY_good_girL}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mG[33m0[33m0[33md[33m_[33mB[33mo[33mY[33m_[33mg[33mo[33mo[33md[33m_[33mg[33mi[33mr[33mL[1m[34m}[0m[39m[33m'[39m[1B[53D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[56C[0m[33m'[39m[39m [19D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{G00d_BOY_good_girL_}'[39m[21D[1m[34m{[0m[39m[19C[1m[34m}[0m[39m[?1l>[?2004l[2B
+ffe26e584f540d20a78384192b2d9e6c0894bf1e
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{G00d_BOY_good_girL_}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mG[33m0[33m0[33md[33m_[33mB[33mO[33mY[33m_[33mg[33mo[33mo[33md[33m_[33mg[33mi[33mr[33mL[33m_[1m[34m}[0m[39m[33m'[39m[1B[54D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[57C[0m[33m'[39m[39m [20D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[1C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{th1s_1s_th3_1st_st4g3!!}'[39m[25D[1m[34m{[0m[39m[23C[1m[34m}[0m[39m[?1l>[?2004l[2B
+b593ac906470b17b23f449871d9684e87231db67
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{th1s_1s_th3_1st_st4g3!!}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mt[33mh[33m1[33ms[33m_[33m1[33ms[33m_[33mt[33mh[33m3[33m_[33m1[33ms[33mt[33m_[33ms[33mt[33m4[33mg[33m3[33m![33m![1m[34m}[0m[39m[33m'[39m[1B[58D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[61C[0m[33m'[39m[39m [24D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[5C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}'[39m[29D[1m[34m{[0m[39m[27C[1m[34m}[0m[39m[?1l>[?2004l[2B
+7db023f7ec01142ce6659fd9304a59a8fc26c066
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mw[33m3[33ml[33mc[33m0[33mm[33m3[33m_[33mT[33m0[33m_[33m$[33mT[33m4[33mg[33m3[33m_[33m![33m_[33mO[33mf[33m_[33mL[33m4[33mB[33m_[33m2[1m[34m}[0m[39m[33m'[39m[1B[62D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[65C[0m[33m'[39m[39m [28D[1m[31m{[0m[39m[1B[32D[1m[32m([0m[39m[37C[1m[35m{[0m[39m[8C[1m[35m}[0m[39m[33m'[39m[1m[32m)[0m[39m[A[9C[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [0m[33m'[39m[39m [1B[31D[1m[34m([0m[39m[37C[1m[32m{[0m[39m[8C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[A[19D[33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33m'[39m[39m [33mf[33mlag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}'[39m[33D[1m[34m{[0m[39m[31C[1m[34m}[0m[39m[?1l>[?2004l[2B
+ee1662afe48187ded29efb0a704d1014d8ab16d8
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hLAB1FLAG='flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[22C[33m'[33mf[33ml[33ma[33mg[1m[34m{[0m[39m[33mw[33m0[33mw[33m_[33mt[33mh[33m1[33ms[33m_[33m1[33ms[33m_[33mT[33mh[33m3[33m_[33mS[33me[33mC[33m0[33mn[33mD[33m_[33mS[33mT[33m4[33mg[33m3[33m_[33m![33m![1m[34m}[0m[39m[33m'[39m[1B[66D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[A[21C[16C[33m3[33ml[33mc[33m0[33mm[33m3[33m_[33mT[33m0[33m_[33m$[33mT[33m4[33mg[33m3[33m_[33m![33m_[33mO[33mf[33m_[33mL[33m4[33mB[33m_[33m2[33m}[33m'[39m[39m [39m [0m[39m [39m [1B[33mP[1m[34mW[0m[39m[33m=[39m[1m[34m$[0m[39m[0m[39m([39me[39mc[1m[35mh[1m[34mo[0m[39m[36m [36m-[36mn[36m [39m[39m"[0m[32m$[0m[32mL[39m[0m[39mA[0m[33mB[4C[1m[35mG[1m[35m"[1m[35m [1m[35m|[1m[35m [0m[39m[33ms[39m[39mh[1m[34ma[0m[39m[39m1[2C[36mm[36m [0m[36m|[36m [36ma[39m[39mw[1m[34mk[0m[39m [36m'[0m[36m{[36mp[39m[39mr[33mi[1m[32mn[0m[39m[4C[0m[33m}[33m'[0m[33m)[1B[39m[1m[32me[0m[39m[33mc[39m[1m[34mh[0m[39m[1m[34mo[0m[39m[36m [36m$[36mP[36mW[39m[A[A[55C[1m[34m}[0m[39m[33m'[39m[1B[39mP[0m[39mW[39m=[1m[35m$[1m[34m([0m[39m[36me[36mc[0m[36mh[0m[36mo[39m[39m [32m-[32mn[39m[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[4C[1m[35mG[0m[39m[0m[33m"[39m[0m[39m [1m[34m|[0m[39m[0m[39m [36ms[36mh[0m[36ma[36m1[2C[36mm[39m[39m [1m[34m|[0m[39m[39m [36ma[36mw[0m[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[0m[33mn[4C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[0m[36me[36mc[0m[36mh[0m[36mo[39m[39m [39m$[39mP[39mW[A[A[21C[15C[33mt[33mh[33m1[33ms[33m_[33m1[33ms[33m_[33mt[33mh[33m3[33m_[33m1[33ms[33mt[33m_[33ms[33mt[33m4[33mg[33m3[33m![33m![33m}[33m'[39m[39m [39m [0m[39m [39m [1B[33mP[1m[34mW[0m[39m[33m=[39m[1m[34m$[0m[39m[0m[39m([39me[39mc[1m[35mh[1m[34mo[0m[39m[36m [36m-[36mn[36m [39m[39m"[0m[32m$[0m[32mL[39m[0m[39mA[0m[33mB[4C[1m[35mG[1m[35m"[1m[35m [1m[35m|[1m[35m [0m[39m[33ms[39m[39mh[1m[34ma[0m[39m[39m1[2C[36mm[36m [0m[36m|[36m [36ma[39m[39mw[1m[34mk[0m[39m [36m'[0m[36m{[36mp[39m[39mr[33mi[1m[32mn[0m[39m[4C[0m[33m}[33m'[0m[33m)[1B[39m[1m[32me[0m[39m[33mc[39m[1m[34mh[0m[39m[1m[34mo[0m[39m[36m [36m$[36mP[36mW[39m[A[A[51C[1m[34m}[0m[39m[33m'[39m[1B[39mP[0m[39mW[39m=[1m[35m$[1m[34m([0m[39m[36me[36mc[0m[36mh[0m[36mo[39m[39m [32m-[32mn[39m[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[4C[1m[35mG[0m[39m[0m[33m"[39m[0m[39m [1m[34m|[0m[39m[0m[39m [36ms[36mh[0m[36ma[36m1[2C[36mm[39m[39m [1m[34m|[0m[39m[39m [36ma[36mw[0m[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[0m[33mn[4C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[0m[36me[36mc[0m[36mh[0m[36mo[39m[39m [39m$[39mP[39mW[A[A[21C[15C[33mG[33m0[33m0[33md[33m_[33mB[33mO[33mY[33m_[33mg[33mo[33mo[33md[33m_[33mg[33mi[33mr[33mL[33m_[33m}[33m'[39m[39m [39m [0m[39m [39m [1B[33mP[1m[34mW[0m[39m[33m=[39m[1m[34m$[0m[39m[0m[39m([39me[39mc[1m[35mh[1m[34mo[0m[39m[36m [36m-[36mn[36m [39m[39m"[0m[32m$[0m[32mL[39m[0m[39mA[0m[33mB[4C[1m[35mG[1m[35m"[1m[35m [1m[35m|[1m[35m [0m[39m[33ms[39m[39mh[1m[34ma[0m[39m[39m1[2C[36mm[36m [0m[36m|[36m [36ma[39m[39mw[1m[34mk[0m[39m [36m'[0m[36m{[36mp[39m[39mr[33mi[1m[32mn[0m[39m[4C[0m[33m}[33m'[0m[33m)[1B[39m[1m[32me[0m[39m[33mc[39m[1m[34mh[0m[39m[1m[34mo[0m[39m[36m [36m$[36mP[36mW[39m[A[A[47C[1m[34m}[0m[39m[33m'[39m[1B[39mP[0m[39mW[39m=[1m[35m$[1m[34m([0m[39m[36me[36mc[0m[36mh[0m[36mo[39m[39m [32m-[32mn[39m[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[4C[1m[35mG[0m[39m[0m[33m"[39m[0m[39m [1m[34m|[0m[39m[0m[39m [36ms[36mh[0m[36ma[36m1[2C[36mm[39m[39m [1m[34m|[0m[39m[39m [36ma[36mw[0m[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[0m[33mn[4C[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[0m[36me[36mc[0m[36mh[0m[36mo[39m[39m [39m$[39mP[39mW[A[A[21C[21C[33mo[11C[33m}[1m[34m'[0m[39m[39m [1B[1m[34mP[0m[39m[2C[0m[39m$[1m[35m([1m[34me[0m[39m[2C[36mo[36m [39m[39m-[32mn[32m [39m[39m"[0m[33m$[7C[1m[35mG[1m[35m"[0m[39m[33m [39m[0m[39m|[1m[34m [0m[39m[39ms[5C[36mm[36m [39m[0m[39m|[1m[34m [0m[39m[39ma[36mw[36mk[36m [39m[39m'[0m[33m{[1m[32mp[0m[39m[7C[0m[33m}[1m[32m'[0m[39m[0m[33m)[39m[1B[1m[34me[0m[39m[2C[36mo[36m [39m[3C[A[A[46C[1m[34m}[0m[39m[0m[33m'[39m[1B[0m[39mP[2C[1m[35m$[1m[34m([0m[39m[0m[36me[2C[36mo[39m[39m [32m-[32mn[39m[39m [33m"[1m[35m$[7C[1m[35mG[0m[39m[0m[33m"[39m[39m [1m[34m|[0m[39m[0m[39m [36ms[5C[36mm[39m[39m [1m[34m|[0m[39m[0m[39m [36ma[36mw[36mk[39m[39m [33m'[1m[32m{[0m[39m[0m[33mp[7C[1m[32m}[0m[39m[0m[33m'[39m[1m[34m)[0m[39m[1B[0m[36me[2C[36mo[39m[39m [3C[A[A[21C[15C[33mw[33m3[33m1[33m1[33m_[33m3[33mr[33md[33m_[33ms[33mt[33ma[33mg[33me[33m_[33mw[33ma[33ms[1m[34m_[0m[39m[33me[39m[1m[34ma[0m[39msy}[1m[35m'[1B[0m[39m[36mP[36mW[36m=[0m[36m$[39m[0m[39m([32me[32mc[39m[39mh[33mo[1m[35m [1m[35m-[1m[35mn[1m[35m [1m[35m"[3C[1m[35mB[0m[39m[0m[33m1[39m[0m[39mF[1m[34mL[0m[39m[0m[39mA[0m[36mG[36m"[36m [0m[36m|[36m [36ms[36mh[39m[39ma[1m[34m1[0m[39m[39ms[36mu[36mm[36m [39m[0m[39m|[33m [1m[32ma[0m[39m[33mw[33mk[33m [33m'[0m[33m{[3C[1m[32mn[0m[39m[33mt[39m[1m[34m [0m[39m[1m[34m$[0m[39m[36m1[0m[36m}[36m'[0m[36m)[39m[1B[39me[39mc[39mh[39mo[4C[A[A[46C[0m[33m_[33me[0m[33ma[33ms[33my[1m[34m}[0m[39m[0m[33m'[39m[1B[39mP[39mW[39m=[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m[0m[39m [0m[32m-[0m[32mn[39m[0m[39m [0m[33m"[3C[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m[39m [1m[34m|[0m[39m[39m [36ms[36mh[36ma[0m[36m1[36ms[36mu[36mm[39m[39m [1m[34m|[0m[39m[39m [0m[36ma[36mw[36mk[39m[39m [33m'[1m[32m{[0m[39m[3C[0m[33mn[33mt[0m[33m [0m[33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[?1l>[?2004l
+331951d605011459eed8bc0d13cd41ea2cd5e473
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open ~/memlabs/Lab1/dump/flag3.png[38D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1m~[1m/[1mm[1me[1mm[1ml[1ma[1mb[1ms[1m/[1mL[1ma[1mb[1m1[1m/[1md[1mu[1mm[1mp[1m/[1mf[1ml[1ma[1mg[1m3[1m.[1mp[1mn[1mg[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open ~/memlabs/Lab1/dump/flag3.png[38D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1m~[1m/[1mm[1me[1mm[1ml[1ma[1mb[1ms[1m/[1mL[1ma[1mb[1m1[1m/[1md[1mu[1mm[1mp[1m/[1mf[1ml[1ma[1mg[1m3[1m.[1mp[1mn[1mg[0m[37D[36mL[36mA[36mB[36m1[36mF[36mL[36mA[36mG[39m=[1m'[1mf[1ml[1ma[1mg[1m{[1mw[1m3[1m1[1m1[1m_[1m3[1mr[1md[1m_[1ms[1mt[1ma[1mg[1me[1m_[1mw[1ma[1ms[1m_[1me[1ma[1ms[1my[0m}'
+PW=$(echo -n "$LAB1FLAG" | sha1sum | awk '{print $1}')[K
+echo $PW[K[A[A[13C[39mL[39mA[39mB[39m1[39mF[39mL[39mA[39mG=[0m[33m'[0m[33mf[0m[33ml[0m[33ma[0m[33mg[1m[34m{[0m[39m[0m[33mw[0m[33m3[0m[33m1[0m[33m1[0m[33m_[0m[33m3[0m[33mr[0m[33md[0m[33m_[0m[33ms[0m[33mt[0m[33ma[0m[33mg[0m[33me[0m[33m_[0m[33mw[0m[33ma[0m[33ms[0m[33m_[0m[33me[0m[33ma[0m[33ms[0m[33my[1m[34m}[0m[39m[33m'[39m[1B[58D[1m[35m$[1m[34m([0m[39m[36me[36mc[36mh[36mo[39m [32m-[32mn[39m [33m"[1m[35m$[1m[35mL[1m[35mA[1m[35mB[1m[35m1[1m[35mF[1m[35mL[1m[35mA[1m[35mG[0m[39m[33m"[39m [1m[34m|[0m[39m [36ms[36mh[36ma[36m1[36ms[36mu[36mm[39m [1m[34m|[0m[39m [36ma[36mw[36mk[39m [33m'[1m[32m{[0m[39m[33mp[33mr[33mi[33mn[33mt[33m [33m$[33m1[1m[32m}[0m[39m[33m'[39m[1m[34m)[0m[39m[1B[36me[36mc[36mh[36mo[39m[4C[A[54C[49D[1m[7m[34m([0m[27m[39m[48C[48D[27m[1m[34m([0m[39m[47C[9D[1m[7m[32m{[0m[27m[39m[8C[8D[27m[1m[32m{[0m[39m[7C[9C[1m[7m[32m}[0m[27m[39m[10D[10C[27m[1m[32m}[0m[39m[11D[49C[1m[7m[34m)[0m[27m[39m[50D[50C[27m[1m[34m)[0m[39m[51D[A[61C[24D[1m[7m[34m{[0m[27m[39m[23C[23D[27m[1m[34m{[0m[39m[22C[P[21C [22D[P[21C [22D[33ml[33m_[33m3[33mr[33md[33m_[33ms[33mt[33ma[33mg[33me[33m_[33mw[33ma[33ms[33m_[33me[33ma[33ms[0m[33my[1m[34m}[0m[39m[33m'[39m[21D[33ml[33m_[33m3[33mr[33md[33m_[33ms[33mt[33ma[33mg[33me[33m_[33mw[33ma[33ms[33m_[33me[33ma[33ms[0m[33my[1m[34m}[0m[39m[33m'[39m[21D[?1l>[?2004l[2B
+6045dd90029719a039fd2d2ebcca718439dd100a
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h7z x -p"$PW" dump/mega/Important.zip -odump/mega/[49D[36m7[36mz[39m[3C[32m-[32mp[33m"[1m[35m$[1m[35mP[1m[35mW[0m[39m[33m"[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mz[1mi[1mp[0m [32m-[32mo[32md[32mu[32mm[32mp[32m/[32mm[32me[32mg[32ma[32m/[39m[?1l>[?2004l
+
+7-Zip 26.03 (x64) : Copyright (c) 1999-2026 Igor Pavlov : 2026-09-03
+ 64-bit locale=en_US.UTF-8 Threads:1 OPEN_MAX:4096, ASM
+
+Scanning the drive for archives:
+  0M Scan         1 file, 57457 bytes (57 KiB)
+
+Extracting archive: dump/mega/Important.zip
+--
+Path = dump/mega/Important.zip
+Type = zip
+Physical Size = 57457
+Comment = Password is SHA1(stage-3-FLAG) from Lab-1. Password is in lowercase.
+
+  0%    
+Would you like to replace the existing file:
+  Path:     dump/mega/Important.png
+  Size:     0 bytes
+  Modified: 2019-12-23 05:46:06
+with the file from archive:
+  Path:     Important.png
+  Size:     59291 bytes (58 KiB)
+  Modified: 2019-12-23 05:46:06
+? (Y)es / (N)o / (A)lways / (S)kip all / A(u)to rename all / (Q)uit? y
+
+  0% - Important.png                    Everything is Ok
+
+Size:       59291
+Compressed: 57457
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hls -la dump/mega/[17D[36ml[36ms[39m [32m-[32ml[32ma[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[0m[?1l>[?2004l
+total 128
+drwxrwxr-x 2 ryo ryo  4096 Oct 10 14:58 [0m[01;34m.[0m
+drwxrwxr-x 3 ryo ryo  4096 Oct 10 14:44 [01;34m..[0m
+-rw-rw-r-- 1 ryo ryo 59291 Dec 23  2019 [01;35mImportant.png[0m
+-rw-rw-r-- 1 ryo ryo 57457 Dec 23  2019 [01;31mImportant.zip[0m
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004hxdg-open dump/mega/Important.png[32D[36mx[36md[36mg[36m-[36mo[36mp[36me[36mn[39m [1md[1mu[1mm[1mp[1m/[1mm[1me[1mg[1ma[1m/[1mI[1mm[1mp[1mo[1mr[1mt[1ma[1mn[1mt[1m.[1mp[1mn[1mg[0m[?1l>[?2004l
+                                                                                                                                                              ]0;ryo@kali: ~/memlabs/Lab2
+[0m[27m[24m[J[ryo@02230297 Lab2]$ [K[?1h=[?2004h[0m[27m[24m[J[ryo@02230297 Lab2]$ [0m[27m[24
