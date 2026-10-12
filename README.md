@@ -44,18 +44,18 @@
 | **MD5** | `b9fec1a443907d870cb32b048bda9380` |
 | **SHA256** | `88e708413898c98351d1a5a221799fc34460dfecb20e482ca5247b0b113b8cf2` |
 | **Profile** | Win7SP1x64 |
-| **Image date/time** | 2019-12-11 14:38:00 UTC (20:08 local, +0530) |
+
 
 ### 1.1 What This Lab Was About
 In this lab, a relative's computer crashed while the user was doing several tasks at the same time. My job was to recover the important files and work out what the user was doing at the moment of the crash. By the end of the investigation I had reconstructed the user's last few minutes on the computer. The user had run a command in the **command prompt** that printed an encoded string, had a password-protected archive called `Important.rar` open in **WinRAR**, and was drawing a picture in **MS Paint** that was never saved. I recovered all **three flags**.
 
 ### 1.2 Flags I Found
 
-| # | Flag | Where it was hiding | Figure |
-|---|------|---------------------|--------|
-| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt | 1.10 |
-| 2 | `flag{w3ll_3rd_stage_was_easy}` | `flag3.png` inside `Important.rar`; the password was Alissa's NTLM hash | 1.19 |
-| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory | 1.23 |
+| # | Flag | Where it was hiding | 
+|---|------|---------------------|
+| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt |
+| 2 | `flag{w3ll_3rd_stage_was_easy}` | `flag3.png` inside `Important.rar`; the password was Alissa's NTLM hash |
+| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory |
 
 ### 1.3 Investigation Log
 
@@ -239,7 +239,6 @@ This is the raw memory of `mspaint.exe` displayed as an image in GIMP. The unsav
 | **MD5** | `ddb337936a75153822baed718851716b` |
 | **SHA256** | `33d76b29683b38875d7a49bf91c23c58a72d0e1772e89f1b5ce19c25eccb9809` |
 | **Profile** | Win7SP1x64 |
-| **Image date/time** | 2019-12-14 10:38:46 UTC (16:08 local, +0530) |
 
 ### 2.1 What This Lab Was About
 This Windows 7 computer had **Google Chrome** and the **KeePass** password manager open. I found three flags:
@@ -249,11 +248,11 @@ This Windows 7 computer had **Google Chrome** and the **KeePass** password manag
 
 ### 2.2 Flags I Found
 
-| # | Flag | Where it was hiding | Figure |
-|---|------|---------------------|--------|
-| 1 | `flag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}` | `NEW_TMP` environment variable (Base64) | 2.10 |
-| 2 | `flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}` | KeePass database → Recycle Bin → entry "Sabka Baap" | 2.17 |
-| 3 | `flag{oK_So_Now_St4g3_3_is_DoNE!!}` | `Important.png` from the mega.nz zip | 2.24 |
+| # | Flag | Where it was hiding | 
+|---|------|---------------------|
+| 1 | `flag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}` | `NEW_TMP` environment variable (Base64) | 
+| 2 | `flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}` | KeePass database → Recycle Bin → entry "Sabka Baap" | 
+| 3 | `flag{oK_So_Now_St4g3_3_is_DoNE!!}` | `Important.png` from the mega.nz zip |
 
 ### 2.3 Investigation Log
 
@@ -394,7 +393,7 @@ The inner zip had a comment:
 
 **Figure 2.21:** Dead end: SHA1 of the wrong flag (`25761e0a…`)
 
-Then I used the right flag, the stage-3 flag from Lab 1, `flag{w3ll_3rd_stage_was_easy}`. Its SHA1 was **`6045dd90029719a039fd2d2ebcca718439dd100a`**. 7-Zip accepted it and asked to replace the 0-byte file with the real **59,291-byte** image, and I said yes.
+Then I used the right flag, the stage-3 flag from Lab 1, `flag{w3ll_3rd_stage_was_easy}`. Its SHA1 was **`6045dd90029719a039fd2d2ebcca718439dd100a`**. 7-Zip accepted it and asked to replace the 0-byte file with the real **59,291-byte** image.
 
 ![Lab 2 correct hash](assets/Lab_2/22.png)
 
@@ -432,7 +431,6 @@ The password was `6045dd90029719a039fd2d2ebcca718439dd100a`. My first attempt wi
 | **MD5** | `ce4e7adc4efbf719888d2c87256d1da3` |
 | **SHA256** | `a43797b924f7de2629dc466f61e3c7edff1484e9ad6ac702bddd4c9d5f4be1e5` |
 | **Profile** | Win7SP1x86_23418 (**32-bit**) |
-| **Image date/time** | 2018-09-30 09:47:54 UTC (15:17 local, +0530) |
 
 ### 3.1 What This Lab Was About
 A malicious Python script had encoded a secret, and the flag was split into two halves:
@@ -441,11 +439,11 @@ A malicious Python script had encoded a secret, and the flag was split into two 
 
 ### 3.2 Flag I Found
 
-| Part | Value | Figure |
-|---|---|---|
-| First half | `inctf{0n3_h4lf` | 3.12 |
-| Second half | `_1s_n0t_3n0ugh}` | 3.18 |
-| **Full flag** | **`inctf{0n3_h4lf_1s_n0t_3n0ugh}`** | 3.19 |
+| Part | Value |
+|---|---|
+| First half | `inctf{0n3_h4lf` |
+| Second half | `_1s_n0t_3n0ugh}` |
+| **Full flag** | **`inctf{0n3_h4lf_1s_n0t_3n0ugh}`** |
 
 ### 3.3 Investigation Log
 
@@ -635,9 +633,9 @@ In this lab the important file had been **deleted**, and it took several steps t
 
 ### 4.2 Flag I Found
 
-| Flag | Where it was hiding | Figure |
-|---|---|---|
-| `inctf{1_is_n0t_EQu4l_7o_2_bUt_th1s_d0s3nt_m4ke_s3ns3}` | Resident `$DATA` in the MFT record of the deleted `Important.txt` | 4.15, 4.16 |
+| Flag | Where it was hiding |
+|---|---|
+| `inctf{1_is_n0t_EQu4l_7o_2_bUt_th1s_d0s3nt_m4ke_s3ns3}` | Resident `$DATA` in the MFT record of the deleted `Important.txt` |
 
 ### 4.3 Investigation Log
 
@@ -777,7 +775,6 @@ NTFS works differently. It keeps a **1 KB record for every file in the Master Fi
 | **MD5** | `9dd6cb1134c9b018020bad44f27394db` |
 | **SHA256** | `08725b77ed2a447b128e12c031c17db4524f36920db791e27452b5d9165ff83a` |
 | **Profile** | Win7SP1x64 |
-| **Image date/time** | 2019-12-20 03:47:57 UTC (09:17 local, +0530) |
 
 ### 5.1 What This Lab Was About
 WinRAR had a password-protected archive open, and its name, `SW1wb3J0YW50`, turned out to be Base64 for **"Important"**.
@@ -788,10 +785,10 @@ WinRAR had a password-protected archive open, and its name, `SW1wb3J0YW50`, turn
 
 ### 5.2 Flags I Found
 
-| # | Flag | Where it was hiding | Figure |
-|---|------|---------------------|--------|
-| 1 | `flag{!!_w3LL_d0n3_St4g3-1_0f_L4B_5_D0n3_!!}` | Encoded file name in the IE/Explorer history | 5.15 |
-| 2 | `flag{W1th_th1s_$taGe_2_1s_c0mPL3T3_!!}` | `Stage2.png` inside the RAR, opened with Flag 1 | 5.18 |
+| # | Flag | Where it was hiding |
+|---|------|---------------------|
+| 1 | `flag{!!_w3LL_d0n3_St4g3-1_0f_L4B_5_D0n3_!!}` | Encoded file name in the IE/Explorer history |
+| 2 | `flag{W1th_th1s_$taGe_2_1s_c0mPL3T3_!!}` | `Stage2.png` inside the RAR, opened with Flag 1 |
 
 ### 5.3 Investigation Log
 
