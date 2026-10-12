@@ -2,13 +2,26 @@
 ## MemLabs Memory Forensics Challenge (Labs 1 to 5)
 
 ## Table of Contents
-1. [How I Set Up and Worked](#how-i-set-up-and-worked)
-2. [Lab 1: Beginner's Luck](#lab-1-beginners-luck)
-3. [Lab 2: A New World](#lab-2-a-new-world)
-4. [Lab 3: The Evil's Den](#lab-3-the-evils-den)
-5. [Lab 4: Obsession](#lab-4-obsession)
-6. [Lab 5: Black Tuesday](#lab-5-black-tuesday)
-7. [Final Summary: All Flags](#final-summary-all-flags)
+1. [Introduction](#introduction)
+2. [Aim](#aim)
+3. [How I Set Up and Worked](#how-i-set-up-and-worked)
+4. [Lab 1: Beginner's Luck](#lab-1-beginners-luck)
+5. [Lab 2: A New World](#lab-2-a-new-world)
+6. [Lab 3: The Evil's Den](#lab-3-the-evils-den)
+7. [Lab 4: Obsession](#lab-4-obsession)
+8. [Lab 5: Black Tuesday](#lab-5-black-tuesday)
+9. [Final Summary: All Flags](#final-summary-all-flags)
+10. [What I Learned](#what-i-learned)
+
+---
+
+## Introduction
+Memory forensics is the study of a computer's RAM to find out what was happening on the computer at a certain moment. Unlike the hard disk, RAM holds things that are never saved, such as open programs, typed commands, passwords and unsaved work, and all of it is lost when the computer is turned off.
+
+In this assignment I worked on the MemLabs challenges. Each lab gives a memory dump from a Windows computer and a short story, and the task is to investigate the dump and find the hidden flags. I used Kali Linux and Volatility 2, along with a few other tools, and I recorded every step I took, including the mistakes and dead ends.
+
+## Aim
+The aim of this assignment is to use Volatility to investigate the memory dumps of MemLabs Labs 1 to 5, find all the hidden flags, and explain in my own words why each technique was able to find the evidence.
 
 ---
 
@@ -45,17 +58,16 @@
 | **SHA256** | `88e708413898c98351d1a5a221799fc34460dfecb20e482ca5247b0b113b8cf2` |
 | **Profile** | Win7SP1x64 |
 
-
 ### 1.1 What This Lab Was About
 In this lab, a relative's computer crashed while the user was doing several tasks at the same time. My job was to recover the important files and work out what the user was doing at the moment of the crash. By the end of the investigation I had reconstructed the user's last few minutes on the computer. The user had run a command in the **command prompt** that printed an encoded string, had a password-protected archive called `Important.rar` open in **WinRAR**, and was drawing a picture in **MS Paint** that was never saved. I recovered all **three flags**.
 
 ### 1.2 Flags I Found
 
-| # | Flag | Where it was hiding | 
+| # | Flag | Where it was hiding |
 |---|------|---------------------|
-| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt |
-| 2 | `flag{w3ll_3rd_stage_was_easy}` | `flag3.png` inside `Important.rar`; the password was Alissa's NTLM hash |
-| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory |
+| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt | 
+| 2 | `flag{w3ll_3rd_stage_was_easy}` | `flag3.png` inside `Important.rar`; the password was Alissa's NTLM hash | 
+| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory | 
 
 ### 1.3 Investigation Log
 
@@ -248,11 +260,11 @@ This Windows 7 computer had **Google Chrome** and the **KeePass** password manag
 
 ### 2.2 Flags I Found
 
-| # | Flag | Where it was hiding | 
+| # | Flag | Where it was hiding |
 |---|------|---------------------|
 | 1 | `flag{w3lc0m3_T0_$T4g3_!_Of_L4B_2}` | `NEW_TMP` environment variable (Base64) | 
-| 2 | `flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}` | KeePass database → Recycle Bin → entry "Sabka Baap" | 
-| 3 | `flag{oK_So_Now_St4g3_3_is_DoNE!!}` | `Important.png` from the mega.nz zip |
+| 2 | `flag{w0w_th1s_1s_Th3_SeC0nD_ST4g3_!!}` | KeePass database → Recycle Bin → entry "Sabka Baap" |
+| 3 | `flag{oK_So_Now_St4g3_3_is_DoNE!!}` | `Important.png` from the mega.nz zip | 
 
 ### 2.3 Investigation Log
 
@@ -393,7 +405,7 @@ The inner zip had a comment:
 
 **Figure 2.21:** Dead end: SHA1 of the wrong flag (`25761e0a…`)
 
-Then I used the right flag, the stage-3 flag from Lab 1, `flag{w3ll_3rd_stage_was_easy}`. Its SHA1 was **`6045dd90029719a039fd2d2ebcca718439dd100a`**. 7-Zip accepted it and asked to replace the 0-byte file with the real **59,291-byte** image.
+Then I used the right flag, the stage-3 flag from Lab 1, `flag{w3ll_3rd_stage_was_easy}`. Its SHA1 was **`6045dd90029719a039fd2d2ebcca718439dd100a`**. 7-Zip accepted it and asked to replace the 0-byte file with the real **59,291-byte** image, and I said yes.
 
 ![Lab 2 correct hash](assets/Lab_2/22.png)
 
@@ -439,10 +451,10 @@ A malicious Python script had encoded a secret, and the flag was split into two 
 
 ### 3.2 Flag I Found
 
-| Part | Value |
-|---|---|
-| First half | `inctf{0n3_h4lf` |
-| Second half | `_1s_n0t_3n0ugh}` |
+| Part | Value | 
+|---|---|---|
+| First half | `inctf{0n3_h4lf` | 
+| Second half | `_1s_n0t_3n0ugh}` | 
 | **Full flag** | **`inctf{0n3_h4lf_1s_n0t_3n0ugh}`** |
 
 ### 3.3 Investigation Log
@@ -622,7 +634,6 @@ My `reverse.py` (Figure 3.14) does exactly this, and it also removes the null-by
 | **MD5** | `b0dd82624c51d4b2d689ba38812aa9e1` |
 | **SHA256** | `53289a00f74397798928603356c81ae9d3cd3aff009472307e9d364fad252c49` |
 | **Profile** | Win7SP1x64 |
-| **Image date/time** | 2019-06-29 07:30:00 UTC (13:00 local, +0530) |
 
 ### 4.1 What This Lab Was About
 In this lab the important file had been **deleted**, and it took several steps to get to it:
@@ -933,8 +944,10 @@ I used Volatility's **built-in `iehistory`** plugin, because this system recorde
 | Lab 5 | `flag{!!_w3LL_d0n3_St4g3-1_0f_L4B_5_D0n3_!!}` | `iehistory` → Base64 file name |
 | Lab 5 | `flag{W1th_th1s_$taGe_2_1s_c0mPL3T3_!!}` | `dumpfiles` → unrar with Flag 1 |
 
-### What I Learned
-- **Memory holds far more than a list of running programs.** In these five labs I recovered console output, environment variables, cached files, password hashes, browser history, MFT records of deleted files, and even a drawing that was never saved.
-- **Every plugin reads a different kind of trace.** When a plugin failed (`pslist` in Lab 4, `chromehistory` in Lab 2), understanding *how* it works let me reach the same evidence another way: `psscan`, or reading Chrome's SQLite file myself.
-- **Dead ends and mistakes are part of the work.** The decoy image in Lab 4, the wrong hash in Lab 2 and the empty "Location" search in Lab 5 each taught me something. Recording them makes my investigation honest and repeatable.
-- **Connecting evidence across cases matters.** Labs 1, 2 and 5 all came from the same computer (SMARTNET-PC), with the same users and password hashes, and Lab 2 could only be finished using a flag from Lab 1.
+## What I Learned
+
+From this assignment, I have learned that a computer's memory holds much more evidence than I expected. Before, I thought RAM could only show which programs were running. Now I know it can also keep commands that were typed and their output, hidden environment variables, open files, password hashes, browser history, and even a drawing that was never saved. I also learned to protect the evidence by hashing it first, and to always start with the big picture (the Windows version and running processes) before looking for flags.
+
+I have also learned how to use Volatility properly and choose the right plugin for each job. Each plugin looks at a different kind of evidence. For example, `cmdscan` only showed the typed command, but `consoles` showed the output with the flag. When a tool did not work, like `pslist` in Lab 4 or the Chrome plugin in Lab 2, I learned to understand why and find another way to get the same evidence. Lab 4 also showed me that a deleted file is not always gone, because its content can still be found in the MFT record in memory.
+
+Finally, I have learned that mistakes and dead ends are a normal part of an investigation. I typed wrong values, hashed the wrong flag and spent time on a decoy image, but each mistake taught me something. I learned that small details matter, like an extra newline in a hash or a missing `=` in Base64. Most of all, I learned that the answer usually comes from connecting many small pieces of evidence together, not from one single command.
