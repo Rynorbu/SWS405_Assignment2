@@ -1,5 +1,5 @@
 # SWS405 Digital Forensics – Assignment 2
-## MemLabs Memory Forensics Challenge (Labs 1 – 5)
+## MemLabs Memory Forensics Challenge
 
 ## Table of Contents
 1. [Setup and Method](#setup-and-method)
@@ -58,9 +58,9 @@ I recovered all **three flags**.
 
 | # | Flag | Where it was hiding | Figure |
 |---|------|---------------------|--------|
-| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt | 1.9 |
-| 2 | `flag{w3ll_3rd_stage_was_easy}` | Image `flag3.png` inside `Important.rar`; password = Alissa's NTLM hash | 1.15 |
-| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory | 1.17 |
+| 1 | `flag{th1s_1s_th3_1st_st4g3!!}` | Base64 text printed in the command prompt | 1.10 |
+| 2 | `flag{w3ll_3rd_stage_was_easy}` | Image `flag3.png` inside `Important.rar`; password = Alissa's NTLM hash | 1.19 |
+| 3 | `flag{G00d_BoY_good_girL}` | Unsaved drawing in MS Paint's memory | 1.23 |
 
 ### 1.3 Investigation Log
 
@@ -200,25 +200,39 @@ I converted Alissa's NTLM hash to **uppercase**, as the hint said: `F4FF64C8BAAC
 **Figure 1.19:** `flag3.png` – **Flag 2: `flag{w3ll_3rd_stage_was_easy}`** (MemLabs calls this the "3rd stage" flag)
 
 #### Step 5 – Flag 3: the drawing in MS Paint (`memdump` + GIMP)
-**Dead end 1 – looking for a saved picture.** I searched the `filescan` output for `.png`, `.bmp` and `.jpg` files. I only found Windows system images (a Media Player icon, desktop wallpapers and the default user picture). There was no saved drawing, so the picture had to exist **only in Paint's memory**.
+**Confirming the Paint process.** The story says she was "trying to draw something". `pslist` showed **`mspaint.exe` (PID 2424)**, started at 14:35:14 UTC, about three minutes before the capture.
 
-**Dumping Paint's memory.** I used `memdump` on `mspaint.exe` (PID 2424). This saved everything that process had in RAM into one file, `2424.dmp`.
+**Dead end 1 – looking for a saved picture.** I searched the `filescan` output for `.png`, `.bmp` and `.jpg` files. I only found Windows system images: a Media Player icon (`wmpnss_color48.png`), two desktop wallpapers (`TranscodedWallpaper.jpg`) and the default user picture (`user.bmp`). There was **no saved drawing**, so the picture had to exist **only in Paint's memory**.
 
-**Dead end 2 – searching for text.** I searched the dump for the text `flag{` and found nothing. This makes sense: a drawing is stored as **pixels**, not as text.
+![Lab 1 paint process and image search](assets/Lab_1/21.png)
 
-**Viewing the memory as a picture.** I renamed the dump to `.data` and opened it in GIMP as **raw image data**.
+**Figure 1.20:** `mspaint.exe` (PID 2424) in `pslist`, and the image-file search in `filescan` – no saved drawing (dead end)
+
+**Dumping Paint's memory.** I used `memdump` on `mspaint.exe` (PID 2424). This saved everything that process had in RAM into one file, `2424.dmp` (**255 MB**).
+
+![Lab 1 memdump](assets/Lab_1/22.png)
+
+**Figure 1.21:** `memdump` of mspaint.exe – 2424.dmp (255 MB)
+
+**Dead end 2 – searching for text.** I searched the dump for the text `flag{` and got **no result**. This makes sense: a drawing is stored as **pixels**, not as text.
+
+**Opening the memory as a picture.** I copied the dump to `2424.data` (the `.data` extension makes GIMP offer its **raw image data** import) and opened it in GIMP.
+
+![Lab 1 strings and GIMP](assets/Lab_1/23.png)
+
+**Figure 1.22:** `strings` search finding nothing (dead end), then opening the dump in GIMP as raw data
+
+**GIMP settings I used:**
 - My GIMP version had no "Image Type" option. In the newer GIMP it is called **Pixel format**, so I chose **RGB Alpha (RGBA 8-bit)**.
 - I left the palette options at default, because they only matter for indexed-colour images.
-- I changed the **offset** slowly until I found a white area with handwriting. Then I adjusted the **width** until the writing was straight instead of slanted.
-- The image was upside down, so I flipped it vertically.
-- *Problem:* GIMP also printed a warning, `Procedure 'file-raw-load': no mnemonic for property data-type`, when I opened it from the terminal. The import dialog still worked.
+- I changed the **offset** slowly until white areas with handwriting appeared. Then I adjusted the **width** until the writing was straight instead of slanted.
+- *Problem:* GIMP printed a warning in the terminal, `Procedure 'file-raw-load': no mnemonic for property data-type`, but the import dialog still worked.
 
-The drawing showed **Flag 3: `flag{G00d_BoY_good_girL}`**.
+The handwriting appeared **several times** in the image. Paint keeps more than one copy of the canvas in memory (for example the visible canvas and its undo/redraw buffers). Every copy shows the same text: **Flag 3: `flag{G00d_BoY_good_girL}`**.
 
-<!-- ADD YOUR SCREENSHOTS HERE: GIMP raw import settings, and the flipped drawing showing the flag -->
-**Figure 1.20:** [ADD SCREENSHOT: GIMP raw-data import settings (pixel format, width, offset)]
+![Lab 1 flag 3](assets/Lab_1/flag.jpg)
 
-**Figure 1.21:** [ADD SCREENSHOT: Recovered Paint drawing – **Flag 3**]
+**Figure 1.23:** Raw memory of mspaint.exe viewed in GIMP – the unsaved drawing showing **Flag 3: `flag{G00d_BoY_good_girL}`**
 
 ### 1.4 Forensic Reasoning (why each plugin was the right tool)
 
@@ -226,7 +240,7 @@ The drawing showed **Flag 3: `flag{G00d_BoY_good_girL}`**.
 
 **Flag 2 – `filescan` + `dumpfiles` + `hashdump`:** When a program opens a file, Windows creates a file object and caches the file's data in RAM. `filescan` finds those objects and `dumpfiles` copies the cached data out, so I recovered `Important.rar` without the hard disk. For the password, Windows keeps the **SAM** hive (password hashes) and the **SYSTEM** hive (the key to decrypt them) loaded in memory. That is why `hashdump` could give me Alissa's NTLM hash directly from RAM.
 
-**Flag 3 – `memdump`:** The drawing was never saved, so there was no file object for `filescan` to find. While Paint is open, the canvas sits in the process's memory as raw pixels. `memdump` saves that memory, and GIMP can display the bytes as pixels. The image comes out upside down because Windows bitmaps store pixel rows from bottom to top.
+**Flag 3 – `memdump`:** The drawing was never saved, so there was no file object for `filescan` to find. While Paint is open, the canvas sits in the process's memory as raw pixels. `memdump` saves that memory, and GIMP can display the bytes as pixels. The width must match the canvas width, or the lines come out slanted. Searching with `strings` could never work, because a picture is not text.
 
 ---
 ---
